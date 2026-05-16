@@ -1,0 +1,324 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "The Cat API",
+    "description": "Get random images of cats",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://developers.thecatapi.com/view-account/ylX4blBYT9FaoVd6OhvR?report=bOoHBz-8t"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.thecatapi.com/v1",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/images/search": {
+      "get": {
+        "summary": "Search for random cat images",
+        "description": "Returns a random cat image or multiple random cat images",
+        "operationId": "searchImages",
+        "tags": [
+          "Images"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of images to return (1-10)",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 10,
+              "default": 1
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "Size of the images to return",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "small",
+                "med",
+                "full"
+              ],
+              "default": "med"
+            }
+          },
+          {
+            "name": "mime_types",
+            "in": "query",
+            "description": "Comma-separated list of mime types to filter by",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "jpg,png"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Order of images returned",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "RANDOM",
+                "ASC",
+                "DESC"
+              ],
+              "default": "RANDOM"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number for pagination",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0
+            }
+          },
+          {
+            "name": "category_ids",
+            "in": "query",
+            "description": "Comma-separated list of category IDs to filter by",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "breed_ids",
+            "in": "query",
+            "description": "Comma-separated list of breed IDs to filter by",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with cat image(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CatImage"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - invalid parameters"
+          },
+          "401": {
+            "description": "Unauthorized - invalid or missing API key"
+          },
+          "429": {
+            "description": "Too many requests - rate limit exceeded"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          },
+          {}
+        ]
+      }
+    },
+    "/breeds": {
+      "get": {
+        "summary": "Get list of cat breeds",
+        "description": "Returns a list of all cat breeds with details",
+        "operationId": "getBreeds",
+        "tags": [
+          "Breeds"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of breeds to return",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 10
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number for pagination",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with cat breeds",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Breed"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - invalid parameters"
+          },
+          "401": {
+            "description": "Unauthorized - invalid or missing API key"
+          },
+          "429": {
+            "description": "Too many requests - rate limit exceeded"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          },
+          {}
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CatImage": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the image"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL of the cat image"
+          },
+          "width": {
+            "type": "integer",
+            "description": "Width of the image in pixels"
+          },
+          "height": {
+            "type": "integer",
+            "description": "Height of the image in pixels"
+          },
+          "breeds": {
+            "type": "array",
+            "description": "Array of breed information if available",
+            "items": {
+              "$ref": "#/components/schemas/Breed"
+            }
+          },
+          "categories": {
+            "type": "array",
+            "description": "Array of categories the image belongs to",
+            "items": {
+              "$ref": "#/components/schemas/Category"
+            }
+          }
+        }
+      },
+      "Breed": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the breed"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the breed"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the breed"
+          },
+          "temperament": {
+            "type": "string",
+            "description": "Temperament characteristics of the breed"
+          },
+          "origin": {
+            "type": "string",
+            "description": "Country or region of origin"
+          },
+          "life_span": {
+            "type": "string",
+            "description": "Average life span of the breed"
+          },
+          "weight": {
+            "type": "object",
+            "properties": {
+              "imperial": {
+                "type": "string",
+                "description": "Weight in imperial units"
+              },
+              "metric": {
+                "type": "string",
+                "description": "Weight in metric units"
+              }
+            }
+          },
+          "wikipedia_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Wikipedia URL for the breed"
+          }
+        }
+      },
+      "Category": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Unique identifier for the category"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the category"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-api-key",
+        "description": "API key for authentication. Required for higher rate limits and some endpoints."
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Images",
+      "description": "Operations related to cat images"
+    },
+    {
+      "name": "Breeds",
+      "description": "Operations related to cat breeds"
+    }
+  ]
+}

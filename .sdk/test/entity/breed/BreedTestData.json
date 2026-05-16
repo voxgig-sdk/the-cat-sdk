@@ -1,0 +1,49 @@
+{
+  "existing": {
+    "breed": {
+      "BREED00": {
+        "description": "s50",
+        "id": "BREED00",
+        "life_span": "s52",
+        "name": "s53",
+        "origin": "s54",
+        "temperament": "s55",
+        "weight": {},
+        "wikipedia_url": "s57"
+      },
+      "BREED01": {
+        "description": "sa0",
+        "id": "BREED01",
+        "life_span": "sa2",
+        "name": "sa3",
+        "origin": "sa4",
+        "temperament": "sa5",
+        "weight": {},
+        "wikipedia_url": "sa7"
+      },
+      "BREED02": {
+        "description": "sf0",
+        "id": "BREED02",
+        "life_span": "sf2",
+        "name": "sf3",
+        "origin": "sf4",
+        "temperament": "sf5",
+        "weight": {},
+        "wikipedia_url": "sf7"
+      }
+    }
+  },
+  "new": {
+    "breed": {
+      "breed_ref01": {
+        "description": "s140",
+        "life_span": "s142",
+        "name": "s143",
+        "origin": "s144",
+        "temperament": "s145",
+        "weight": {},
+        "wikipedia_url": "s147"
+      }
+    }
+  }
+}

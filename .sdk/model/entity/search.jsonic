@@ -1,0 +1,137 @@
+# Entity: search
+
+main: kit: entity: search: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "breed"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "category"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "height"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "url"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "width"
+      req: false
+      type: "`$INTEGER`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "search"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "breed_id"
+                orig: "breed_id"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "category_id"
+                orig: "category_id"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: 1
+                kind: "query"
+                name: "limit"
+                orig: "limit"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                example: "jpg,png"
+                kind: "query"
+                name: "mime_type"
+                orig: "mime_type"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: "RANDOM"
+                kind: "query"
+                name: "order"
+                orig: "order"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: 0
+                kind: "query"
+                name: "page"
+                orig: "page"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                example: "med"
+                kind: "query"
+                name: "size"
+                orig: "size"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/images/search"
+          parts: [
+            "images"
+            "search"
+          ]
+          select: {
+            exist: [
+              "breed_id"
+              "category_id"
+              "limit"
+              "mime_type"
+              "order"
+              "page"
+              "size"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}
