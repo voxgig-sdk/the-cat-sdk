@@ -92,7 +92,6 @@ function search_basic_setup(extra)
     ["THECAT_TEST_SEARCH_ENTID"] = idmap,
     ["THECAT_TEST_LIVE"] = "FALSE",
     ["THECAT_TEST_EXPLAIN"] = "FALSE",
-    ["THECAT_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -104,7 +103,6 @@ function search_basic_setup(extra)
   if env["THECAT_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
-        apikey = env["THECAT_APIKEY"],
       },
       extra or {},
     })

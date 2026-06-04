@@ -119,7 +119,6 @@ func breedBasicSetup(extra map[string]any) *entityTestSetup {
 		"THECAT_TEST_BREED_ENTID": idmap,
 		"THECAT_TEST_LIVE":      "FALSE",
 		"THECAT_TEST_EXPLAIN":   "FALSE",
-		"THECAT_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["THECAT_TEST_BREED_ENTID"])
@@ -130,7 +129,6 @@ func breedBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["THECAT_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["THECAT_APIKEY"],
 			},
 			extra,
 		})

@@ -62,14 +62,12 @@ def breed_direct_setup(mockres)
   env = Runner.env_override({
     "THECAT_TEST_BREED_ENTID" => {},
     "THECAT_TEST_LIVE" => "FALSE",
-    "THECAT_APIKEY" => "NONE",
   })
 
   live = env["THECAT_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {
-      "apikey" => env["THECAT_APIKEY"],
     }
     client = TheCatSDK.new(merged_opts)
     return {

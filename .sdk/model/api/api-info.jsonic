@@ -16,8 +16,23 @@ main: {
       ]
       title: "The Cat API"
       version: "1.0.0"
+      tagline: "Random cat images and breed data, tested daily for reliability"
+      homepage: "https://thecatapi.com"
+      docs_url: "https://developers.thecatapi.com"
+      about_md: `The Cat API serves random cat images and breed information. It is the feline counterpart to [The Dog API](https://thedogapi.com) and is operated by the same small team behind a family of pet-image APIs.
+
+What you typically get from the API:
+
+- Random cat images via \`/images/search\`, with an optional \`limit\` query parameter for batch fetches
+- Breed metadata that can be filtered or joined to image results
+- JSON responses suitable for direct embedding in web and mobile clients
+
+The public catalogue listing reports CORS as disabled and shows the service responding in the 270-405 ms range with very high uptime. Higher-volume or authenticated usage generally requires signing up for an API key at the developer portal.`
+      entity_desc: {
+        breed: "Cat breed records, used to look up breed metadata and to filter image results by breed."
+        search: "Image search operations, exposed through `/images/search` for fetching one or many random cat images (optionally filtered by breed)."
+      }
+      auth: false
     }
   }
-}
-
 }

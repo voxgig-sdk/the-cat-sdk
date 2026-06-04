@@ -83,7 +83,6 @@ def breed_basic_setup(extra)
     "THECAT_TEST_BREED_ENTID" => idmap,
     "THECAT_TEST_LIVE" => "FALSE",
     "THECAT_TEST_EXPLAIN" => "FALSE",
-    "THECAT_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +94,6 @@ def breed_basic_setup(extra)
   if env["THECAT_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["THECAT_APIKEY"],
       },
       extra || {},
     ])

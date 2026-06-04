@@ -61,14 +61,12 @@ def _search_direct_setup(mockres):
     env = runner.env_override({
         "THECAT_TEST_SEARCH_ENTID": {},
         "THECAT_TEST_LIVE": "FALSE",
-        "THECAT_APIKEY": "NONE",
     })
 
     live = env.get("THECAT_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("THECAT_APIKEY"),
         }
         client = TheCatSDK(merged_opts)
         return {

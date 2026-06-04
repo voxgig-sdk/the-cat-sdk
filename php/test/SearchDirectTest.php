@@ -68,14 +68,12 @@ function search_direct_setup($mockres)
     $env = Runner::env_override([
         "THECAT_TEST_SEARCH_ENTID" => [],
         "THECAT_TEST_LIVE" => "FALSE",
-        "THECAT_APIKEY" => "NONE",
     ]);
 
     $live = $env["THECAT_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["THECAT_APIKEY"],
         ];
         $client = new TheCatSDK($merged_opts);
         return [
