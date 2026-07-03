@@ -2,9 +2,17 @@ Gem::Specification.new do |spec|
   spec.name          = "voxgig-sdk-the-cat"
   spec.version       = "0.0.1"
   spec.authors       = ["Voxgig"]
-  spec.summary       = "TheCat SDK for Ruby"
+  spec.summary       = "Unofficial generated Ruby SDK for the The Cat public API. Not affiliated with or endorsed by the upstream API provider."
+  spec.description   = "Unofficial generated Ruby SDK for the The Cat public API. Not affiliated with or endorsed by the upstream API provider."
   spec.license       = "MIT"
   spec.homepage      = "https://github.com/voxgig-sdk/the-cat-sdk"
+  spec.metadata      = {
+    "homepage_uri"          => "https://github.com/voxgig-sdk/the-cat-sdk",
+    "source_code_uri"       => "https://github.com/voxgig-sdk/the-cat-sdk",
+    "bug_tracker_uri"       => "https://github.com/voxgig-sdk/the-cat-sdk/issues",
+    "changelog_uri"         => "https://github.com/voxgig-sdk/the-cat-sdk/blob/main/CHANGELOG.md",
+    "rubygems_mfa_required" => "true"
+  }
 
   spec.files         = Dir["lib/**/*.rb", "*.rb"]
   spec.require_paths = ["."]

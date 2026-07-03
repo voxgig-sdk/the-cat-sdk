@@ -10,13 +10,13 @@ The Ruby SDK for the TheCat API — an entity-oriented client using idiomatic Ru
 
 ## Install
 ```bash
-gem install the-cat-sdk
+gem install voxgig-sdk-the-cat
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "the-cat-sdk"
+gem "voxgig-sdk-the-cat"
 ```
 
 Then run:

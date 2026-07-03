@@ -10,7 +10,7 @@ The PHP SDK for the TheCat API — an entity-oriented client using PHP conventio
 
 ## Install
 ```bash
-composer require voxgig/the-cat-sdk
+composer require voxgig-sdk/the-cat
 ```
 
 

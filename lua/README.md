@@ -10,7 +10,7 @@ The Lua SDK for the TheCat API — an entity-oriented client using Lua conventio
 
 ## Install
 ```bash
-luarocks install the-cat-sdk
+luarocks install voxgig-sdk-the-cat
 ```
 
 If the module is not yet published, add the source directory to

@@ -8,12 +8,14 @@ source = {
   dir = "the-cat-sdk/lua"
 }
 description = {
-  summary = "TheCat SDK for Lua",
-  license = "MIT"
+  summary = "Unofficial generated Lua SDK for the The Cat public API. Not affiliated with or endorsed by the upstream API provider.",
+  homepage = "https://github.com/voxgig-sdk/the-cat-sdk",
+  issues_url = "https://github.com/voxgig-sdk/the-cat-sdk/issues",
+  license = "MIT",
+  labels = { "voxgig", "sdk", "generated-sdk", "openapi", "api-client", "the-cat" }
 }
 dependencies = {
   "lua >= 5.3",
-  "dkjson >= 2.5",
   "dkjson >= 2.5",
 }
 build = {

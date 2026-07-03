@@ -10,7 +10,7 @@ The TypeScript SDK for the TheCat API — a type-safe, entity-oriented client wi
 
 ## Install
 ```bash
-npm install the-cat
+npm install @voxgig-sdk/the-cat
 ```
 ## Tutorial: your first API call
 

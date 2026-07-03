@@ -10,7 +10,7 @@ The Python SDK for the TheCat API — an entity-oriented client following Python
 
 ## Install
 ```bash
-pip install the-cat-sdk
+pip install voxgig-sdk-the-cat
 ```
 
 Or install from source:
