@@ -93,12 +93,14 @@ func breedDirectSetup(mockres any) *breedDirectSetupResult {
 	env := envOverride(map[string]any{
 		"THECAT_TEST_BREED_ENTID": map[string]any{},
 		"THECAT_TEST_LIVE":    "FALSE",
+		"THECAT_APIKEY":       "NONE",
 	})
 
 	live := env["THECAT_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["THECAT_APIKEY"],
 		}
 		client := sdk.NewTheCatSDK(mergedOpts)
 

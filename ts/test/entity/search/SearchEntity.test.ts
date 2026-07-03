@@ -113,6 +113,7 @@ function basicSetup(extra?: any) {
     'THE_CAT_TEST_SEARCH_ENTID': idmap,
     'THE_CAT_TEST_LIVE': 'FALSE',
     'THE_CAT_TEST_EXPLAIN': 'FALSE',
+    'THE_CAT_APIKEY': 'NONE',
   })
 
   idmap = env['THE_CAT_TEST_SEARCH_ENTID']
@@ -122,6 +123,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new TheCatSDK(merge([
       {
+        apikey: env.THE_CAT_APIKEY,
       },
       extra
     ]))

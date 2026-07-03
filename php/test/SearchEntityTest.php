@@ -86,6 +86,7 @@ function search_basic_setup($extra)
         "THECAT_TEST_SEARCH_ENTID" => $idmap,
         "THECAT_TEST_LIVE" => "FALSE",
         "THECAT_TEST_EXPLAIN" => "FALSE",
+        "THECAT_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,6 +98,7 @@ function search_basic_setup($extra)
     if ($env["THECAT_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
+                "apikey" => $env["THECAT_APIKEY"],
             ],
             $extra ?? [],
         ]);

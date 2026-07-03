@@ -1,20 +1,8 @@
 # TheCat SDK
 
-Random cat images and breed data, tested daily for reliability
+The Cat API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About The Cat API
-
-The Cat API serves random cat images and breed information. It is the feline counterpart to [The Dog API](https://thedogapi.com) and is operated by the same small team behind a family of pet-image APIs.
-
-What you typically get from the API:
-
-- Random cat images via `/images/search`, with an optional `limit` query parameter for batch fetches
-- Breed metadata that can be filtered or joined to image results
-- JSON responses suitable for direct embedding in web and mobile clients
-
-The public catalogue listing reports CORS as disabled and shows the service responding in the 270-405 ms range with very high uptime. Higher-volume or authenticated usage generally requires signing up for an API key at the developer portal.
 
 ## Try it
 
@@ -48,29 +36,31 @@ gem install the-cat-sdk
 luarocks install the-cat-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { TheCatSDK } from 'the-cat'
 
-const client = new TheCatSDK({})
+const client = new TheCatSDK({
+  apikey: process.env.THE-CAT_APIKEY,
+})
 
 // List all breeds
 const breeds = await client.Breed().list()
+console.log(breeds.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -100,8 +90,8 @@ The API exposes 2 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Breed** | Cat breed records, used to look up breed metadata and to filter image results by breed. | `/breeds` |
-| **Search** | Image search operations, exposed through `/images/search` for fetching one or many random cat images (optionally filtered by breed). | `/images/search` |
+| **Breed** |  | `/breeds` |
+| **Search** |  | `/images/search` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -111,12 +101,16 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from thecat_sdk import TheCatSDK
 
-client = TheCatSDK({})
+client = TheCatSDK({
+    "apikey": os.environ.get("THE-CAT_APIKEY"),
+})
 
 # List all breeds
-breeds, err = client.Breed(None).list(None, None)
+breeds, err = client.Breed().list()
+print(breeds)
 ```
 
 ### PHP
@@ -125,10 +119,13 @@ breeds, err = client.Breed(None).list(None, None)
 <?php
 require_once 'thecat_sdk.php';
 
-$client = new TheCatSDK([]);
+$client = new TheCatSDK([
+    "apikey" => getenv("THE-CAT_APIKEY"),
+]);
 
 // List all breeds
-[$breeds, $err] = $client->Breed(null)->list(null, null);
+[$breeds, $err] = $client->Breed()->list();
+print_r($breeds);
 ```
 
 ### Golang
@@ -136,10 +133,13 @@ $client = new TheCatSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/the-cat-sdk/go"
 
-client := sdk.NewTheCatSDK(map[string]any{})
+client := sdk.NewTheCatSDK(map[string]any{
+    "apikey": os.Getenv("THE-CAT_APIKEY"),
+})
 
 // List all breeds
 breeds, err := client.Breed(nil).List(nil, nil)
+fmt.Println(breeds)
 ```
 
 ### Ruby
@@ -147,10 +147,13 @@ breeds, err := client.Breed(nil).List(nil, nil)
 ```ruby
 require_relative "TheCat_sdk"
 
-client = TheCatSDK.new({})
+client = TheCatSDK.new({
+  "apikey" => ENV["THE-CAT_APIKEY"],
+})
 
 # List all breeds
-breeds, err = client.Breed(nil).list(nil, nil)
+breeds, err = client.Breed().list
+puts breeds
 ```
 
 ### Lua
@@ -158,10 +161,13 @@ breeds, err = client.Breed(nil).list(nil, nil)
 ```lua
 local sdk = require("the-cat_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("THE-CAT_APIKEY"),
+})
 
 -- List all breeds
-local breeds, err = client:Breed(nil):list(nil, nil)
+local breeds, err = client:Breed():list()
+print(breeds)
 ```
 
 ## Unit testing in offline mode
@@ -180,25 +186,21 @@ const result = await client.Breed().load({ id: 'test01' })
 ### Python
 
 ```python
-client = TheCatSDK.test(None, None)
-result, err = client.Breed(None).load(
-    {"id": "test01"}, None
-)
+client = TheCatSDK.test()
+result, err = client.Breed().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = TheCatSDK::test(null, null);
-[$result, $err] = $client->Breed(null)->load(
-    ["id" => "test01"], null
-);
+$client = TheCatSDK::test();
+[$result, $err] = $client->Breed()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Breed(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -207,19 +209,15 @@ result, err := client.Breed(nil).Load(
 ### Ruby
 
 ```ruby
-client = TheCatSDK.test(nil, nil)
-result, err = client.Breed(nil).load(
-  { "id" => "test01" }, nil
-)
+client = TheCatSDK.test
+result, err = client.Breed().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Breed(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Breed():load({ id = "test01" })
 ```
 
 ## How it works
@@ -323,11 +321,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the The Cat API
-
-- Upstream: [https://thecatapi.com](https://thecatapi.com)
-- API docs: [https://developers.thecatapi.com](https://developers.thecatapi.com)
 
 ---
 

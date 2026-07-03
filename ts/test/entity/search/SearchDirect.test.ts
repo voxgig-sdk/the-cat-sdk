@@ -79,12 +79,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'THECAT_TEST_SEARCH_ENTID': {},
     'THECAT_TEST_LIVE': 'FALSE',
+    'THECAT_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.THECAT_TEST_LIVE
 
   if (live) {
     const client = new TheCatSDK({
+      apikey: env.THECAT_APIKEY,
     })
 
     let idmap: any = env['THECAT_TEST_SEARCH_ENTID']
