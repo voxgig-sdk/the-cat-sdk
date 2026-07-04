@@ -245,11 +245,17 @@ func (sdk *TheCatSDK) Direct(fetchargs map[string]any) (map[string]any, error) {
 }
 
 
+// Breed returns a Breed entity bound to this client.
+// Idiomatic usage: client.Breed(nil).List(nil, nil) or
+// client.Breed(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *TheCatSDK) Breed(data map[string]any) TheCatEntity {
 	return NewBreedEntityFunc(sdk, data)
 }
 
 
+// Search returns a Search entity bound to this client.
+// Idiomatic usage: client.Search(nil).List(nil, nil) or
+// client.Search(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *TheCatSDK) Search(data map[string]any) TheCatEntity {
 	return NewSearchEntityFunc(sdk, data)
 }

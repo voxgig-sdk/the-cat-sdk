@@ -50,8 +50,7 @@ class TestBreedEntity:
         breed_ref01_ent = client.Breed(None)
         breed_ref01_match = {}
 
-        breed_ref01_list_result, err = breed_ref01_ent.list(breed_ref01_match, None)
-        assert err is None
+        breed_ref01_list_result = breed_ref01_ent.list(breed_ref01_match, None)
         assert isinstance(breed_ref01_list_result, list)
 
 

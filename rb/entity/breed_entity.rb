@@ -45,6 +45,7 @@ class BreedEntity
     end
   end
 
+  # @return [Breed, Hash] the current Breed data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,6 +58,7 @@ class BreedEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of Breed fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
@@ -65,6 +67,11 @@ class BreedEntity
   
 
   
+  # List Breed items matching the given filter.
+  #
+  # @param reqmatch [BreedListMatch, Hash, nil] match filter (any subset of Breed fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Array<Breed>, Array] the matching Breed items; raises TheCatError on failure
   def list(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

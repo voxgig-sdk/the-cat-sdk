@@ -43,8 +43,7 @@ class BreedEntityTest < Minitest::Test
     breed_ref01_ent = client.Breed(nil)
     breed_ref01_match = {}
 
-    breed_ref01_list_result, err = breed_ref01_ent.list(breed_ref01_match, nil)
-    assert_nil err
+    breed_ref01_list_result = breed_ref01_ent.list(breed_ref01_match, nil)
     assert breed_ref01_list_result.is_a?(Array)
 
   end

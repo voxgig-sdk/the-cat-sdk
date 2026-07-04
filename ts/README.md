@@ -9,9 +9,12 @@ The TypeScript SDK for the TheCat API — a type-safe, entity-oriented client wi
 
 
 ## Install
-```bash
-npm install @voxgig-sdk/the-cat
-```
+This package is not yet published to npm. Install it from the GitHub
+release tag (`ts/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/the-cat-sdk/releases](https://github.com/voxgig-sdk/the-cat-sdk/releases)
+
+
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
@@ -20,17 +23,17 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { TheCatSDK } from 'the-cat'
+import { TheCatSDK } from '@voxgig-sdk/the-cat'
 
 const client = new TheCatSDK({
-  apikey: process.env.THE-CAT_APIKEY,
+  apikey: process.env.THE_CAT_APIKEY,
 })
 ```
 
 ### 2. List breeds
 
 ```ts
-const result = await client.Breed().list()
+const result = await client.breed.list()
 
 if (result.ok) {
   for (const item of result.data) {
@@ -81,7 +84,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = TheCatSDK.test()
 
-const result = await client.Planet().load({ id: 'test01' })
+const result = await client.breed.load({ id: 'test01' })
 // result.ok === true
 // result.data contains mock response data
 ```
@@ -98,7 +101,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Planet()
+const entity = client.breed
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -135,8 +138,8 @@ const client = new TheCatSDK({
 Create a `.env.local` file at the project root:
 
 ```
-THE-CAT_TEST_LIVE=TRUE
-THE-CAT_APIKEY=<your-key>
+THE_CAT_TEST_LIVE=TRUE
+THE_CAT_APIKEY=<your-key>
 ```
 
 Then run:
@@ -291,7 +294,7 @@ API path: `/images/search`
 
 ### Breed
 
-Create an instance: `const breed = client.Breed()`
+Create an instance: `const breed = client.breed`
 
 #### Operations
 
@@ -315,13 +318,13 @@ Create an instance: `const breed = client.Breed()`
 #### Example: List
 
 ```ts
-const breeds = await client.Breed().list()
+const breeds = await client.breed.list()
 ```
 
 
 ### Search
 
-Create an instance: `const search = client.Search()`
+Create an instance: `const search = client.search`
 
 #### Operations
 
@@ -343,7 +346,7 @@ Create an instance: `const search = client.Search()`
 #### Example: List
 
 ```ts
-const searchs = await client.Search().list()
+const searchs = await client.search.list()
 ```
 
 
@@ -404,7 +407,7 @@ the-cat/
 Import the SDK from the package root:
 
 ```ts
-import { TheCatSDK } from 'the-cat'
+import { TheCatSDK } from '@voxgig-sdk/the-cat'
 ```
 
 ### Entity state
@@ -414,11 +417,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const moon = client.Moon()
-await moon.load({ planet_id: 'earth', id: 'luna' })
+const breed = client.breed
+await breed.load({ id: "example_id" })
 
-// moon.data() now returns the loaded moon data
-// moon.match() returns { planet_id: 'earth', id: 'luna' }
+// breed.data() now returns the loaded breed data
+// breed.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration

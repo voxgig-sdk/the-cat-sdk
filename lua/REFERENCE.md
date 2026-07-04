@@ -88,7 +88,7 @@ same parameters as `direct()`.
 ## BreedEntity
 
 ```lua
-local breed = client:Breed(nil)
+local breed = client:breed(nil)
 ```
 
 ### Fields
@@ -111,7 +111,7 @@ local breed = client:Breed(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Breed():list()
+local results, err = client:breed():list()
 ```
 
 ### Common Methods
@@ -147,7 +147,7 @@ Return the entity name.
 ## SearchEntity
 
 ```lua
-local search = client:Search(nil)
+local search = client:search(nil)
 ```
 
 ### Fields
@@ -168,7 +168,7 @@ local search = client:Search(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Search():list()
+local results, err = client:search():list()
 ```
 
 ### Common Methods

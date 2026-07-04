@@ -50,8 +50,7 @@ class BreedEntityTest extends TestCase
         $breed_ref01_ent = $client->Breed(null);
         $breed_ref01_match = [];
 
-        [$breed_ref01_list_result, $err] = $breed_ref01_ent->list($breed_ref01_match, null);
-        $this->assertNull($err);
+        $breed_ref01_list_result = $breed_ref01_ent->list($breed_ref01_match, null);
         $this->assertIsArray($breed_ref01_list_result);
 
     }
