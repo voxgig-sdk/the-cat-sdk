@@ -205,28 +205,14 @@ class TheCatSDK {
 
 
 
-  _breed?: BreedEntity
-
-  // Idiomatic facade: `client.breed.list()` / `client.breed.load({ id })`.
-  get breed(): BreedEntity {
-    return (this._breed ??= new BreedEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.breed` instead. */
+  // Entity access: `client.Breed().list()` / `client.Breed().load({ id })`.
   Breed(data?: any) {
     const self = this
     return new BreedEntity(self,data)
   }
 
 
-  _search?: SearchEntity
-
-  // Idiomatic facade: `client.search.list()` / `client.search.load({ id })`.
-  get search(): SearchEntity {
-    return (this._search ??= new SearchEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.search` instead. */
+  // Entity access: `client.Search().list()` / `client.Search().load({ id })`.
   Search(data?: any) {
     const self = this
     return new SearchEntity(self,data)

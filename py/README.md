@@ -34,14 +34,16 @@ client = TheCatSDK({
 })
 ```
 
-### 2. List breeds
+### 2. List breed records
+
+`list()` returns a `list` of records (each a `dict`) and raises on
+error — iterate it directly.
 
 ```python
 try:
-    result = client.breed.list()
-    for item in result:
-        d = item.data_get()
-        print(d["id"], d["name"])
+    breeds = client.Breed().list({})
+    for breed in breeds:
+        print(breed)
 except Exception as err:
     print(f"list failed: {err}")
 ```
@@ -89,8 +91,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = TheCatSDK.test()
 
-result = client.breed.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+breed = client.Breed().load({"id": "test01"})
+# breed contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -248,7 +251,7 @@ API path: `/images/search`
 
 ### Breed
 
-Create an instance: `const breed = client.breed`
+Create an instance: `breed = client.Breed()`
 
 #### Operations
 
@@ -271,14 +274,14 @@ Create an instance: `const breed = client.breed`
 
 #### Example: List
 
-```ts
-const breeds = await client.breed.list()
+```python
+breeds = client.Breed().list({})
 ```
 
 
 ### Search
 
-Create an instance: `const search = client.search`
+Create an instance: `search = client.Search()`
 
 #### Operations
 
@@ -299,8 +302,8 @@ Create an instance: `const search = client.search`
 
 #### Example: List
 
-```ts
-const searchs = await client.search.list()
+```python
+searchs = client.Search().list({})
 ```
 
 
@@ -374,7 +377,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-breed = client.breed
+breed = client.Breed()
 breed.load({"id": "example_id"})
 
 # breed.data_get() now returns the loaded breed data

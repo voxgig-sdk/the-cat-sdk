@@ -85,7 +85,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## BreedEntity
 
 ```python
-breed = client.breed
+breed = client.Breed()
 ```
 
 ### Fields
@@ -108,7 +108,9 @@ breed = client.breed
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.breed.list({})
+results = client.Breed().list({})
+for breed in results:
+    print(breed)
 ```
 
 ### Common Methods
@@ -143,7 +145,7 @@ Return the entity name.
 ## SearchEntity
 
 ```python
-search = client.search
+search = client.Search()
 ```
 
 ### Fields
@@ -164,7 +166,9 @@ search = client.search
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.search.list({})
+results = client.Search().list({})
+for search in results:
+    print(search)
 ```
 
 ### Common Methods

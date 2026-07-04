@@ -30,16 +30,14 @@ client = TheCatSDK.new({
 })
 ```
 
-### 2. List breeds
+### 2. List breed records
 
 ```ruby
 begin
-  result = client.breed.list
-  if result.is_a?(Array)
-    result.each do |item|
-      d = item.data_get
-      puts "#{d["id"]} #{d["name"]}"
-    end
+  # list returns an Array of Breed records — iterate directly.
+  breeds = client.Breed.list
+  breeds.each do |item|
+    puts "#{item["id"]} #{item["name"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -87,13 +85,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = TheCatSDK.test
+client = TheCatSDK.test({
+  "entity" => { "breed" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.breed.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+breed = client.Breed.load({ "id" => "test01" })
+puts breed
 ```
 
 ### Use a custom fetch function
@@ -250,7 +252,7 @@ API path: `/images/search`
 
 ### Breed
 
-Create an instance: `const breed = client.breed`
+Create an instance: `breed = client.Breed`
 
 #### Operations
 
@@ -273,14 +275,15 @@ Create an instance: `const breed = client.breed`
 
 #### Example: List
 
-```ts
-const breeds = await client.breed.list()
+```ruby
+# list returns an Array of Breed records (raises on error).
+breeds = client.Breed.list
 ```
 
 
 ### Search
 
-Create an instance: `const search = client.search`
+Create an instance: `search = client.Search`
 
 #### Operations
 
@@ -301,8 +304,9 @@ Create an instance: `const search = client.search`
 
 #### Example: List
 
-```ts
-const searchs = await client.search.list()
+```ruby
+# list returns an Array of Search records (raises on error).
+searchs = client.Search.list
 ```
 
 
@@ -377,7 +381,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-breed = client.breed
+breed = client.Breed
 breed.load({ "id" => "example_id" })
 
 # breed.data_get now returns the loaded breed data

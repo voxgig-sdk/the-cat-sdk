@@ -233,10 +233,10 @@ class TheCatSDK
 
     private $_breed = null;
 
-    // Idiomatic facade: $client->breed()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Breed() (PHP method
-    // names are case-insensitive).
-    public function breed($data = null)
+    // Canonical facade: $client->Breed()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->breed()
+    // resolves here too.
+    public function Breed($data = null)
     {
         require_once __DIR__ . '/entity/breed_entity.php';
         if ($data === null) {
@@ -251,10 +251,10 @@ class TheCatSDK
 
     private $_search = null;
 
-    // Idiomatic facade: $client->search()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Search() (PHP method
-    // names are case-insensitive).
-    public function search($data = null)
+    // Canonical facade: $client->Search()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->search()
+    // resolves here too.
+    public function Search($data = null)
     {
         require_once __DIR__ . '/entity/search_entity.php';
         if ($data === null) {

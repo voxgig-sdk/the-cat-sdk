@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:breed():list() / client:breed():load({ id = ... })
-function TheCatSDK:breed(data)
+-- Idiomatic facade: client:Breed():list() / client:Breed():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function TheCatSDK:Breed(data)
   local EntityMod = require("entity.breed_entity")
   if data == nil then
     if self._breed == nil then
@@ -256,15 +257,10 @@ function TheCatSDK:breed(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:breed() instead.
-function TheCatSDK:Breed(data)
-  local EntityMod = require("entity.breed_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:search():list() / client:search():load({ id = ... })
-function TheCatSDK:search(data)
+-- Idiomatic facade: client:Search():list() / client:Search():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function TheCatSDK:Search(data)
   local EntityMod = require("entity.search_entity")
   if data == nil then
     if self._search == nil then
@@ -272,12 +268,6 @@ function TheCatSDK:search(data)
     end
     return self._search
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:search() instead.
-function TheCatSDK:Search(data)
-  local EntityMod = require("entity.search_entity")
   return EntityMod.new(self, data)
 end
 

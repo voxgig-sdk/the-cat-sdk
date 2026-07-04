@@ -122,7 +122,7 @@ Alias for `TheCatSDK.test()`.
 ## BreedEntity
 
 ```ts
-const breed = client.breed
+const breed = client.Breed()
 ```
 
 ### Fields
@@ -145,7 +145,7 @@ const breed = client.breed
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.breed.list()
+const results = await client.Breed().list()
 ```
 
 ### Common Methods
@@ -179,7 +179,7 @@ Return a copy of the entity options.
 ## SearchEntity
 
 ```ts
-const search = client.search
+const search = client.Search()
 ```
 
 ### Fields
@@ -200,7 +200,7 @@ const search = client.search
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.search.list()
+const results = await client.Search().list()
 ```
 
 ### Common Methods

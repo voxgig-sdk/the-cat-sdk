@@ -220,41 +220,21 @@ class TheCatSDK:
         }
 
 
-    @property
-    def breed(self):
-        """Idiomatic facade: client.breed.list() / client.breed.load({"id": ...})."""
-        from entity.breed_entity import BreedEntity
-        cached = getattr(self, "_breed", None)
-        if cached is None:
-            cached = BreedEntity(self, None)
-            self._breed = cached
-        return cached
-
-    def Breed(self, data=None):
-        # Deprecated: use client.breed instead.
+    def Breed(self, data=None) -> "BreedEntity":
+        """Entity factory: client.Breed().list({}) / client.Breed().load({"id": ...})."""
         from entity.breed_entity import BreedEntity
         return BreedEntity(self, data)
 
 
-    @property
-    def search(self):
-        """Idiomatic facade: client.search.list() / client.search.load({"id": ...})."""
-        from entity.search_entity import SearchEntity
-        cached = getattr(self, "_search", None)
-        if cached is None:
-            cached = SearchEntity(self, None)
-            self._search = cached
-        return cached
-
-    def Search(self, data=None):
-        # Deprecated: use client.search instead.
+    def Search(self, data=None) -> "SearchEntity":
+        """Entity factory: client.Search().list({}) / client.Search().load({"id": ...})."""
         from entity.search_entity import SearchEntity
         return SearchEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "TheCatSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -274,3 +254,10 @@ class TheCatSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.breed_entity import BreedEntity
+    from entity.search_entity import SearchEntity

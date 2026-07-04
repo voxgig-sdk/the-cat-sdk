@@ -208,26 +208,14 @@ class TheCatSDK
   end
 
 
-  # Idiomatic facade: client.breed.list / client.breed.load({ "id" => ... })
-  def breed
-    require_relative 'entity/breed_entity'
-    @breed ||= BreedEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.breed instead.
+  # Canonical facade: client.Breed.list / client.Breed.load({ "id" => ... })
   def Breed(data = nil)
     require_relative 'entity/breed_entity'
     BreedEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.search.list / client.search.load({ "id" => ... })
-  def search
-    require_relative 'entity/search_entity'
-    @search ||= SearchEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.search instead.
+  # Canonical facade: client.Search.list / client.Search.load({ "id" => ... })
   def Search(data = nil)
     require_relative 'entity/search_entity'
     SearchEntity.new(self, data)

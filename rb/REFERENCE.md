@@ -91,7 +91,7 @@ same parameters as `direct()`. Raises on error.
 ## BreedEntity
 
 ```ruby
-breed = client.breed
+breed = client.Breed
 ```
 
 ### Fields
@@ -114,7 +114,7 @@ breed = client.breed
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.breed.list(nil)
+results = client.Breed.list(nil)
 ```
 
 ### Common Methods
@@ -150,7 +150,7 @@ Return the entity name.
 ## SearchEntity
 
 ```ruby
-search = client.search
+search = client.Search
 ```
 
 ### Fields
@@ -171,7 +171,7 @@ search = client.search
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.search.list(nil)
+results = client.Search.list(nil)
 ```
 
 ### Common Methods

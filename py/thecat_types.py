@@ -4,53 +4,53 @@
 # params (op.<name>.points[].args.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
+#
+# These are TypedDicts, not dataclasses: the SDK ops return/accept plain dicts
+# at runtime, and a TypedDict IS a dict shape, so the types match the runtime.
+# Optional (req:false) keys are modelled as TypedDict key-optionality
+# (total=False), split into a required base + total=False subclass when a type
+# has both required and optional keys.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Any
+from typing import TypedDict, Any
 
 
-@dataclass
-class Breed:
-    description: Optional[str] = None
-    id: Optional[str] = None
-    life_span: Optional[str] = None
-    name: Optional[str] = None
-    origin: Optional[str] = None
-    temperament: Optional[str] = None
-    weight: Optional[dict] = None
-    wikipedia_url: Optional[str] = None
+class Breed(TypedDict, total=False):
+    description: str
+    id: str
+    life_span: str
+    name: str
+    origin: str
+    temperament: str
+    weight: dict
+    wikipedia_url: str
 
 
-@dataclass
-class BreedListMatch:
-    description: Optional[str] = None
-    id: Optional[str] = None
-    life_span: Optional[str] = None
-    name: Optional[str] = None
-    origin: Optional[str] = None
-    temperament: Optional[str] = None
-    weight: Optional[dict] = None
-    wikipedia_url: Optional[str] = None
+class BreedListMatch(TypedDict, total=False):
+    description: str
+    id: str
+    life_span: str
+    name: str
+    origin: str
+    temperament: str
+    weight: dict
+    wikipedia_url: str
 
 
-@dataclass
-class Search:
-    breed: Optional[list] = None
-    category: Optional[list] = None
-    height: Optional[int] = None
-    id: Optional[str] = None
-    url: Optional[str] = None
-    width: Optional[int] = None
+class Search(TypedDict, total=False):
+    breed: list
+    category: list
+    height: int
+    id: str
+    url: str
+    width: int
 
 
-@dataclass
-class SearchListMatch:
-    breed: Optional[list] = None
-    category: Optional[list] = None
-    height: Optional[int] = None
-    id: Optional[str] = None
-    url: Optional[str] = None
-    width: Optional[int] = None
-
+class SearchListMatch(TypedDict, total=False):
+    breed: list
+    category: list
+    height: int
+    id: str
+    url: str
+    width: int

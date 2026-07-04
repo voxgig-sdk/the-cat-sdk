@@ -31,18 +31,16 @@ $client = new TheCatSDK([
 ]);
 ```
 
-### 2. List breeds
+### 2. List breed records
 
 ```php
 try {
-    $result = $client->breed()->list();
-    if (is_array($result)) {
-        foreach ($result as $item) {
-            $d = $item->data_get();
-            echo $d["id"] . " " . $d["name"] . "\n";
-        }
+    // list() returns an array of Breed records — iterate directly.
+    $breeds = $client->Breed()->list();
+    foreach ($breeds as $item) {
+        echo $item["id"] . " " . $item["name"] . "\n";
     }
-} catch (\Exception $err) {
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -88,13 +86,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = TheCatSDK::test();
+$client = TheCatSDK::test([
+    "entity" => ["breed" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->breed()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$breed = $client->Breed()->load(["id" => "test01"]);
+print_r($breed);
 ```
 
 ### Use a custom fetch function
@@ -255,7 +257,7 @@ API path: `/images/search`
 
 ### Breed
 
-Create an instance: `const breed = client.breed`
+Create an instance: `$breed = $client->Breed();`
 
 #### Operations
 
@@ -278,14 +280,15 @@ Create an instance: `const breed = client.breed`
 
 #### Example: List
 
-```ts
-const breeds = await client.breed.list()
+```php
+// list() returns an array of Breed records (throws on error).
+$breeds = $client->Breed()->list();
 ```
 
 
 ### Search
 
-Create an instance: `const search = client.search`
+Create an instance: `$search = $client->Search();`
 
 #### Operations
 
@@ -306,8 +309,9 @@ Create an instance: `const search = client.search`
 
 #### Example: List
 
-```ts
-const searchs = await client.search.list()
+```php
+// list() returns an array of Search records (throws on error).
+$searchs = $client->Search()->list();
 ```
 
 
@@ -382,7 +386,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$breed = $client->breed();
+$breed = $client->Breed();
 $breed->load(["id" => "example_id"]);
 
 // $breed->dataGet() now returns the loaded breed data
