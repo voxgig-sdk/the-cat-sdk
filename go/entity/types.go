@@ -20,8 +20,7 @@ type Breed struct {
 	WikipediaUrl *string `json:"wikipedia_url,omitempty"`
 }
 
-// BreedListMatch mirrors the breed fields as an all-optional match
-// filter (Go analog of Partial<Breed>).
+// BreedListMatch is the typed request payload for Breed.ListTyped.
 type BreedListMatch struct {
 	Description *string `json:"description,omitempty"`
 	Id *string `json:"id,omitempty"`
@@ -43,8 +42,7 @@ type Search struct {
 	Width *int `json:"width,omitempty"`
 }
 
-// SearchListMatch mirrors the search fields as an all-optional match
-// filter (Go analog of Partial<Search>).
+// SearchListMatch is the typed request payload for Search.ListTyped.
 type SearchListMatch struct {
 	Breed *[]any `json:"breed,omitempty"`
 	Category *[]any `json:"category,omitempty"`

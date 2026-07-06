@@ -8,7 +8,7 @@ Complete API reference for the TheCat PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/the-cat_sdk.php';
+require_once __DIR__ . '/thecat_sdk.php';
 
 $client = new TheCatSDK($options);
 ```
@@ -50,11 +50,11 @@ Create a new `BreedEntity` instance. Pass `null` for no initial data.
 
 Create a new `SearchEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): TheCatUtility`
 
 Return a copy of the SDK utility object.
 
@@ -97,40 +97,40 @@ $breed = $client->Breed();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `life_span` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `origin` | ``$STRING`` | No |  |
-| `temperament` | ``$STRING`` | No |  |
-| `weight` | ``$OBJECT`` | No |  |
-| `wikipedia_url` | ``$STRING`` | No |  |
+| `description` | `string` | No |  |
+| `id` | `string` | No |  |
+| `life_span` | `string` | No |  |
+| `name` | `string` | No |  |
+| `origin` | `string` | No |  |
+| `temperament` | `string` | No |  |
+| `weight` | `array` | No |  |
+| `wikipedia_url` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Breed()->list([]);
+$results = $client->Breed()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -139,7 +139,7 @@ Set the entity match criteria.
 Create a new `BreedEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -156,38 +156,38 @@ $search = $client->Search();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `breed` | ``$ARRAY`` | No |  |
-| `category` | ``$ARRAY`` | No |  |
-| `height` | ``$INTEGER`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `width` | ``$INTEGER`` | No |  |
+| `breed` | `array` | No |  |
+| `category` | `array` | No |  |
+| `height` | `int` | No |  |
+| `id` | `string` | No |  |
+| `url` | `string` | No |  |
+| `width` | `int` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Search()->list([]);
+$results = $client->Search()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -196,7 +196,7 @@ Set the entity match criteria.
 Create a new `SearchEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

@@ -17,6 +17,14 @@
 ---@field wikipedia_url? string
 
 ---@class BreedListMatch
+---@field description? string
+---@field id? string
+---@field life_span? string
+---@field name? string
+---@field origin? string
+---@field temperament? string
+---@field weight? table
+---@field wikipedia_url? string
 
 ---@class Search
 ---@field breed? table
@@ -27,6 +35,12 @@
 ---@field width? number
 
 ---@class SearchListMatch
+---@field breed? table
+---@field category? table
+---@field height? number
+---@field id? string
+---@field url? string
+---@field width? number
 
 local M = {}
 

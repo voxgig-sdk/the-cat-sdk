@@ -8,7 +8,7 @@ Complete API reference for the TheCat Python SDK.
 ### Constructor
 
 ```python
-from the-cat_sdk import TheCatSDK
+from thecat_sdk import TheCatSDK
 
 client = TheCatSDK(options)
 ```
@@ -92,23 +92,23 @@ breed = client.Breed()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `life_span` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `origin` | ``$STRING`` | No |  |
-| `temperament` | ``$STRING`` | No |  |
-| `weight` | ``$OBJECT`` | No |  |
-| `wikipedia_url` | ``$STRING`` | No |  |
+| `description` | `str` | No |  |
+| `id` | `str` | No |  |
+| `life_span` | `str` | No |  |
+| `name` | `str` | No |  |
+| `origin` | `str` | No |  |
+| `temperament` | `str` | No |  |
+| `weight` | `dict` | No |  |
+| `wikipedia_url` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Breed().list({})
+results = client.Breed().list()
 for breed in results:
     print(breed)
 ```
@@ -152,21 +152,21 @@ search = client.Search()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `breed` | ``$ARRAY`` | No |  |
-| `category` | ``$ARRAY`` | No |  |
-| `height` | ``$INTEGER`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `width` | ``$INTEGER`` | No |  |
+| `breed` | `list` | No |  |
+| `category` | `list` | No |  |
+| `height` | `int` | No |  |
+| `id` | `str` | No |  |
+| `url` | `str` | No |  |
+| `width` | `int` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Search().list({})
+results = client.Search().list()
 for search in results:
     print(search)
 ```

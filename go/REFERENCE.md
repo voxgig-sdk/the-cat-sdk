@@ -102,14 +102,14 @@ breed := client.Breed(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `life_span` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `origin` | ``$STRING`` | No |  |
-| `temperament` | ``$STRING`` | No |  |
-| `weight` | ``$OBJECT`` | No |  |
-| `wikipedia_url` | ``$STRING`` | No |  |
+| `description` | `string` | No |  |
+| `id` | `string` | No |  |
+| `life_span` | `string` | No |  |
+| `name` | `string` | No |  |
+| `origin` | `string` | No |  |
+| `temperament` | `string` | No |  |
+| `weight` | `map[string]any` | No |  |
+| `wikipedia_url` | `string` | No |  |
 
 ### Operations
 
@@ -155,12 +155,12 @@ search := client.Search(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `breed` | ``$ARRAY`` | No |  |
-| `category` | ``$ARRAY`` | No |  |
-| `height` | ``$INTEGER`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `width` | ``$INTEGER`` | No |  |
+| `breed` | `[]any` | No |  |
+| `category` | `[]any` | No |  |
+| `height` | `int` | No |  |
+| `id` | `string` | No |  |
+| `url` | `string` | No |  |
+| `width` | `int` | No |  |
 
 ### Operations
 

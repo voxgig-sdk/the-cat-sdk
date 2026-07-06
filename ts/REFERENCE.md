@@ -129,14 +129,14 @@ const breed = client.Breed()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `life_span` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `origin` | ``$STRING`` | No |  |
-| `temperament` | ``$STRING`` | No |  |
-| `weight` | ``$OBJECT`` | No |  |
-| `wikipedia_url` | ``$STRING`` | No |  |
+| `description` | `string` | No |  |
+| `id` | `string` | No |  |
+| `life_span` | `string` | No |  |
+| `name` | `string` | No |  |
+| `origin` | `string` | No |  |
+| `temperament` | `string` | No |  |
+| `weight` | `Record<string, any>` | No |  |
+| `wikipedia_url` | `string` | No |  |
 
 ### Operations
 
@@ -186,12 +186,12 @@ const search = client.Search()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `breed` | ``$ARRAY`` | No |  |
-| `category` | ``$ARRAY`` | No |  |
-| `height` | ``$INTEGER`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `width` | ``$INTEGER`` | No |  |
+| `breed` | `any[]` | No |  |
+| `category` | `any[]` | No |  |
+| `height` | `number` | No |  |
+| `id` | `string` | No |  |
+| `url` | `string` | No |  |
+| `width` | `number` | No |  |
 
 ### Operations
 

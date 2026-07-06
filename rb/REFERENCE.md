@@ -8,7 +8,7 @@ Complete API reference for the TheCat Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'the-cat_sdk'
+require_relative 'TheCat_sdk'
 
 client = TheCatSDK.new(options)
 ```
@@ -98,23 +98,23 @@ breed = client.Breed
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `life_span` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `origin` | ``$STRING`` | No |  |
-| `temperament` | ``$STRING`` | No |  |
-| `weight` | ``$OBJECT`` | No |  |
-| `wikipedia_url` | ``$STRING`` | No |  |
+| `description` | `String` | No |  |
+| `id` | `String` | No |  |
+| `life_span` | `String` | No |  |
+| `name` | `String` | No |  |
+| `origin` | `String` | No |  |
+| `temperament` | `String` | No |  |
+| `weight` | `Hash` | No |  |
+| `wikipedia_url` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Breed.list(nil)
+results = client.Breed.list
 ```
 
 ### Common Methods
@@ -157,21 +157,21 @@ search = client.Search
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `breed` | ``$ARRAY`` | No |  |
-| `category` | ``$ARRAY`` | No |  |
-| `height` | ``$INTEGER`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `width` | ``$INTEGER`` | No |  |
+| `breed` | `Array` | No |  |
+| `category` | `Array` | No |  |
+| `height` | `Integer` | No |  |
+| `id` | `String` | No |  |
+| `url` | `String` | No |  |
+| `width` | `Integer` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Search.list(nil)
+results = client.Search.list
 ```
 
 ### Common Methods

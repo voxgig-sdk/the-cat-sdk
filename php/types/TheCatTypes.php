@@ -25,7 +25,7 @@ class Breed
     public ?string $wikipedia_url = null;
 }
 
-/** Match filter for Breed#list (any subset of Breed fields). */
+/** Request payload for Breed#list. */
 class BreedListMatch
 {
     public ?string $description = null;
@@ -49,7 +49,7 @@ class Search
     public ?int $width = null;
 }
 
-/** Match filter for Search#list (any subset of Search fields). */
+/** Request payload for Search#list. */
 class SearchListMatch
 {
     public ?array $breed = null;

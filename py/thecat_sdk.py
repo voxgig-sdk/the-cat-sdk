@@ -221,13 +221,13 @@ class TheCatSDK:
 
 
     def Breed(self, data=None) -> "BreedEntity":
-        """Entity factory: client.Breed().list({}) / client.Breed().load({"id": ...})."""
+        """Entity factory: client.Breed().list() / client.Breed().load({"id": ...})."""
         from entity.breed_entity import BreedEntity
         return BreedEntity(self, data)
 
 
     def Search(self, data=None) -> "SearchEntity":
-        """Entity factory: client.Search().list({}) / client.Search().load({"id": ...})."""
+        """Entity factory: client.Search().list() / client.Search().load({"id": ...})."""
         from entity.search_entity import SearchEntity
         return SearchEntity(self, data)
 

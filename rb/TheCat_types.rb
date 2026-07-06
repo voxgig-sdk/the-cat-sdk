@@ -45,7 +45,7 @@ Breed = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Breed#list (any subset of Breed fields).
+# Request payload for Breed#list.
 #
 # @!attribute [rw] description
 #   @return [String, nil]
@@ -111,7 +111,7 @@ Search = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Search#list (any subset of Search fields).
+# Request payload for Search#list.
 #
 # @!attribute [rw] breed
 #   @return [Array, nil]

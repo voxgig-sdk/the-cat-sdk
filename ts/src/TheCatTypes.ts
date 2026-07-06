@@ -16,7 +16,16 @@ export interface Breed {
   wikipedia_url?: string
 }
 
-export type BreedListMatch = Partial<Breed>
+export interface BreedListMatch {
+  description?: string
+  id?: string
+  life_span?: string
+  name?: string
+  origin?: string
+  temperament?: string
+  weight?: Record<string, any>
+  wikipedia_url?: string
+}
 
 export interface Search {
   breed?: any[]
@@ -27,5 +36,12 @@ export interface Search {
   width?: number
 }
 
-export type SearchListMatch = Partial<Search>
+export interface SearchListMatch {
+  breed?: any[]
+  category?: any[]
+  height?: number
+  id?: string
+  url?: string
+  width?: number
+}
 
