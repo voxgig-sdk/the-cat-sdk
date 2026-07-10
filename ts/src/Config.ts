@@ -39,7 +39,7 @@ class Config {
     base: 'https://api.thecatapi.com/v1',
 
     auth: {
-      prefix: 'Bearer',
+      prefix: '',
     },
 
     headers: {

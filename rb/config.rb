@@ -16,7 +16,7 @@ module TheCatConfig
       "options" => {
         "base" => "https://api.thecatapi.com/v1",
         "auth" => {
-          "prefix" => "Bearer",
+          "prefix" => "",
         },
         "headers" => {
           "content-type" => "application/json",

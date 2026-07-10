@@ -96,6 +96,7 @@ same parameters as `Direct()`.
 
 ```go
 breed := client.Breed(nil)
+fmt.Println(breed.GetName()) // "breed"
 ```
 
 ### Fields
@@ -119,6 +120,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Breed(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
@@ -149,6 +154,7 @@ Return the entity name.
 
 ```go
 search := client.Search(nil)
+fmt.Println(search.GetName()) // "search"
 ```
 
 ### Fields
@@ -170,6 +176,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Search(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods

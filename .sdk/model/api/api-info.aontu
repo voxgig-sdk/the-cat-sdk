@@ -8,15 +8,22 @@ main: {
         url: "https://developers.thecatapi.com/view-account/ylX4blBYT9FaoVd6OhvR?report=bOoHBz-8t"
       }
       description: "Get random images of cats"
+      security: {
+        in: "header"
+        name: "x-api-key"
+        prefix: ""
+        scheme: "ApiKeyAuth"
+        type: "apiKey"
+      }
       servers: [
         {
           description: "Production server"
           url: "https://api.thecatapi.com/v1"
         }
       ]
+      summary: "Get random images of cats"
       title: "The Cat API"
       version: "1.0.0"
+      website: "https://thecatapi.com"
     }
   }
-}
-
