@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- TheCat SDK exists test
 
 local sdk = require("the-cat_sdk")
 
