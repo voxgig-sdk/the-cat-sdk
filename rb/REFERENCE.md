@@ -157,8 +157,8 @@ search = client.Search
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `breed` | `Array` | No |  |
-| `category` | `Array` | No |  |
+| `breeds` | `Array` | No |  |
+| `categories` | `Array` | No |  |
 | `height` | `Integer` | No |  |
 | `id` | `String` | No |  |
 | `url` | `String` | No |  |

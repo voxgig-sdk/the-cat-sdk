@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = TheCatSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = TheCatSDK.test({
+  entity: {
+    breed: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const breeds = await client.Breed().list()
-// breeds is an array of bare Breed records populated with mock data
+// breeds is an array of Breed entities, populated with mock data
+// — call breeds[0].data() for the record itself
 console.log(breeds)
 ```
 
@@ -112,7 +121,7 @@ const client = new TheCatSDK({
   apikey: process.env.THE_CAT_APIKEY,
 })
 
-// List all breeds (returns Breed[])
+// List all breeds (returns BreedEntity[] — .data() for the record)
 const breeds = await client.Breed().list()
 for (const breed of breeds) {
   console.log(breed)
@@ -357,6 +366,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://developers.thecatapi.com/view-account/ylX4blBYT9FaoVd6OhvR?report=bOoHBz-8t](https://developers.thecatapi.com/view-account/ylX4blBYT9FaoVd6OhvR?report=bOoHBz-8t)
 

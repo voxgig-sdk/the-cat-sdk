@@ -186,8 +186,8 @@ const search = client.Search()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `breed` | `any[]` | No |  |
-| `category` | `any[]` | No |  |
+| `breeds` | `any[]` | No |  |
+| `categories` | `any[]` | No |  |
 | `height` | `number` | No |  |
 | `id` | `string` | No |  |
 | `url` | `string` | No |  |

@@ -84,10 +84,10 @@ BreedListMatch = Struct.new(
 
 # Search entity data model.
 #
-# @!attribute [rw] breed
+# @!attribute [rw] breeds
 #   @return [Array, nil]
 #
-# @!attribute [rw] category
+# @!attribute [rw] categories
 #   @return [Array, nil]
 #
 # @!attribute [rw] height
@@ -102,8 +102,8 @@ BreedListMatch = Struct.new(
 # @!attribute [rw] width
 #   @return [Integer, nil]
 Search = Struct.new(
-  :breed,
-  :category,
+  :breeds,
+  :categories,
   :height,
   :id,
   :url,
@@ -113,10 +113,10 @@ Search = Struct.new(
 
 # Request payload for Search#list.
 #
-# @!attribute [rw] breed
+# @!attribute [rw] breeds
 #   @return [Array, nil]
 #
-# @!attribute [rw] category
+# @!attribute [rw] categories
 #   @return [Array, nil]
 #
 # @!attribute [rw] height
@@ -131,8 +131,8 @@ Search = Struct.new(
 # @!attribute [rw] width
 #   @return [Integer, nil]
 SearchListMatch = Struct.new(
-  :breed,
-  :category,
+  :breeds,
+  :categories,
   :height,
   :id,
   :url,

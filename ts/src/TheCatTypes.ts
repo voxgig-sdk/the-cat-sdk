@@ -28,8 +28,8 @@ export interface BreedListMatch {
 }
 
 export interface Search {
-  breed?: any[]
-  category?: any[]
+  breeds?: any[]
+  categories?: any[]
   height?: number
   id?: string
   url?: string
@@ -37,8 +37,8 @@ export interface Search {
 }
 
 export interface SearchListMatch {
-  breed?: any[]
-  category?: any[]
+  breeds?: any[]
+  categories?: any[]
   height?: number
   id?: string
   url?: string

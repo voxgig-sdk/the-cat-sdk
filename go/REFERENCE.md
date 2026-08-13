@@ -161,8 +161,8 @@ fmt.Println(search.GetName()) // "search"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `breed` | `[]any` | No |  |
-| `category` | `[]any` | No |  |
+| `breeds` | `[]any` | No |  |
+| `categories` | `[]any` | No |  |
 | `height` | `int` | No |  |
 | `id` | `string` | No |  |
 | `url` | `string` | No |  |

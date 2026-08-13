@@ -41,8 +41,8 @@ class BreedListMatch
 /** Search entity data model. */
 class Search
 {
-    public ?array $breed = null;
-    public ?array $category = null;
+    public ?array $breeds = null;
+    public ?array $categories = null;
     public ?int $height = null;
     public ?string $id = null;
     public ?string $url = null;
@@ -52,8 +52,8 @@ class Search
 /** Request payload for Search#list. */
 class SearchListMatch
 {
-    public ?array $breed = null;
-    public ?array $category = null;
+    public ?array $breeds = null;
+    public ?array $categories = null;
     public ?int $height = null;
     public ?string $id = null;
     public ?string $url = null;

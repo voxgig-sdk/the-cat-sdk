@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# TheCat SDK exists test
 
 import pytest
 from thecat_sdk import TheCatSDK

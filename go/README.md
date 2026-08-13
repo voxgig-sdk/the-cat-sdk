@@ -283,8 +283,8 @@ API path: `/breeds`
 
 | Field | Description |
 | --- | --- |
-| `"breed"` |  |
-| `"category"` |  |
+| `"breeds"` |  |
+| `"categories"` |  |
 | `"height"` |  |
 | `"id"` |  |
 | `"url"` |  |
@@ -347,8 +347,8 @@ Create an instance: `search := client.Search(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `breed` | `[]any` |  |
-| `category` | `[]any` |  |
+| `breeds` | `[]any` |  |
+| `categories` | `[]any` |  |
 | `height` | `int` |  |
 | `id` | `string` |  |
 | `url` | `string` |  |

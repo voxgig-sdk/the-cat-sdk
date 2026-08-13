@@ -152,8 +152,8 @@ search = client.Search()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `breed` | `list` | No |  |
-| `category` | `list` | No |  |
+| `breeds` | `list` | No |  |
+| `categories` | `list` | No |  |
 | `height` | `int` | No |  |
 | `id` | `str` | No |  |
 | `url` | `str` | No |  |

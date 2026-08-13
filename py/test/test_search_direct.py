@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from thecat_sdk.utility.voxgig_struct import voxgig_struct as vs
 from thecat_sdk import TheCatSDK
-from core import helpers
+from thecat_sdk.core import helpers
 from test import runner
 
 
@@ -58,16 +58,16 @@ def _search_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "THECAT_TEST_SEARCH_ENTID": {},
-        "THECAT_TEST_LIVE": "FALSE",
-        "THECAT_APIKEY": "NONE",
+        "THE_CAT_TEST_SEARCH_ENTID": {},
+        "THE_CAT_TEST_LIVE": "FALSE",
+        "THE_CAT_APIKEY": "NONE",
     })
 
-    live = env.get("THECAT_TEST_LIVE") == "TRUE"
+    live = env.get("THE_CAT_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("THECAT_APIKEY"),
+            "apikey": env.get("THE_CAT_APIKEY"),
         }
         client = TheCatSDK(merged_opts)
         return {

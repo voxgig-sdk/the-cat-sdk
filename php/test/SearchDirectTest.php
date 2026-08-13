@@ -66,16 +66,16 @@ function search_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "THECAT_TEST_SEARCH_ENTID" => [],
-        "THECAT_TEST_LIVE" => "FALSE",
-        "THECAT_APIKEY" => "NONE",
+        "THE_CAT_TEST_SEARCH_ENTID" => [],
+        "THE_CAT_TEST_LIVE" => "FALSE",
+        "THE_CAT_APIKEY" => "NONE",
     ]);
 
-    $live = $env["THECAT_TEST_LIVE"] === "TRUE";
+    $live = $env["THE_CAT_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["THECAT_APIKEY"],
+            "apikey" => $env["THE_CAT_APIKEY"],
         ];
         $client = new TheCatSDK($merged_opts);
         return [

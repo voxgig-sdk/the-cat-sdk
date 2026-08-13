@@ -156,8 +156,8 @@ $search = $client->Search();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `breed` | `array` | No |  |
-| `category` | `array` | No |  |
+| `breeds` | `array` | No |  |
+| `categories` | `array` | No |  |
 | `height` | `int` | No |  |
 | `id` | `string` | No |  |
 | `url` | `string` | No |  |

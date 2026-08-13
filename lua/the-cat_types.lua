@@ -27,16 +27,16 @@
 ---@field wikipedia_url? string
 
 ---@class Search
----@field breed? table
----@field category? table
+---@field breeds? table
+---@field categories? table
 ---@field height? number
 ---@field id? string
 ---@field url? string
 ---@field width? number
 
 ---@class SearchListMatch
----@field breed? table
----@field category? table
+---@field breeds? table
+---@field categories? table
 ---@field height? number
 ---@field id? string
 ---@field url? string

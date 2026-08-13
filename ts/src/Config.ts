@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'TheCat',
   }
 
 
@@ -148,6 +148,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/breeds",
               "parts": [
@@ -177,14 +178,14 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "breed",
+          "name": "breeds",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "category",
+          "name": "categories",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 1
@@ -291,6 +292,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/images/search",
               "parts": [

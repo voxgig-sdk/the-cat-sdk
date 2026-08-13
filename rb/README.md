@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = TheCatSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 breed = client.Breed.list()
 puts breed
 ```
@@ -258,8 +259,8 @@ API path: `/breeds`
 
 | Field | Description |
 | --- | --- |
-| `breed` |  |
-| `category` |  |
+| `breeds` |  |
+| `categories` |  |
 | `height` |  |
 | `id` |  |
 | `url` |  |
@@ -319,8 +320,8 @@ Create an instance: `search = client.Search`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `breed` | `Array` |  |
-| `category` | `Array` |  |
+| `breeds` | `Array` |  |
+| `categories` | `Array` |  |
 | `height` | `Integer` |  |
 | `id` | `String` |  |
 | `url` | `String` |  |

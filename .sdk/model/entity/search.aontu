@@ -6,12 +6,12 @@ main: kit: entity: search: {
 
   fields: [
     {
-      name: "breed"
+      name: "breeds"
       req: false
       type: "`$ARRAY`"
     }
     {
-      name: "category"
+      name: "categories"
       req: false
       type: "`$ARRAY`"
     }

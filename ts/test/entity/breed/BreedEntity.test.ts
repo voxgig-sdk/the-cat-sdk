@@ -26,8 +26,8 @@ import {
 describe('BreedEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when THECAT_TEST_LIVE=TRUE.
-  afterEach(liveDelay('THECAT_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when THE_CAT_TEST_LIVE=TRUE.
+  afterEach(liveDelay('THE_CAT_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = TheCatSDK.test()
@@ -63,7 +63,7 @@ describe('BreedEntity', async () => {
     const breed_ref01_ent = client.Breed()
     const breed_ref01_match: any = {}
 
-    const breed_ref01_list = await breed_ref01_ent.list(breed_ref01_match)
+    const breed_ref01_list = (await breed_ref01_ent.list(breed_ref01_match)).map((e: any) => e.data())
 
 
   })

@@ -127,7 +127,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = TheCatSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $breed = $client->Breed()->list();
 print_r($breed);
 ```
@@ -229,7 +230,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -268,8 +269,8 @@ API path: `/breeds`
 
 | Field | Description |
 | --- | --- |
-| `breed` |  |
-| `category` |  |
+| `breeds` |  |
+| `categories` |  |
 | `height` |  |
 | `id` |  |
 | `url` |  |
@@ -329,8 +330,8 @@ Create an instance: `$search = $client->Search();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `breed` | `array` |  |
-| `category` | `array` |  |
+| `breeds` | `array` |  |
+| `categories` | `array` |  |
 | `height` | `int` |  |
 | `id` | `string` |  |
 | `url` | `string` |  |

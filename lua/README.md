@@ -223,9 +223,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local breed, err = client:Breed():load()
+    local breed, err = client:Breed():list()
     if err then error(err) end
-    -- breed is the loaded record
+    -- breed is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -253,8 +253,8 @@ API path: `/breeds`
 
 | Field | Description |
 | --- | --- |
-| `breed` |  |
-| `category` |  |
+| `breeds` |  |
+| `categories` |  |
 | `height` |  |
 | `id` |  |
 | `url` |  |
@@ -313,8 +313,8 @@ Create an instance: `local search = client:Search(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `breed` | `table` |  |
-| `category` | `table` |  |
+| `breeds` | `table` |  |
+| `categories` | `table` |  |
 | `height` | `number` |  |
 | `id` | `string` |  |
 | `url` | `string` |  |

@@ -37,7 +37,7 @@ class BreedEntity extends TheCatEntityBase<Breed> {
 
 
 
-  async list(this: any, reqmatch?: BreedListMatch, ctrl?: Control): Promise<Breed[]> {
+  async list(this: any, reqmatch?: BreedListMatch, ctrl?: Control): Promise<BreedEntity[]> {
 
     const utility = this._utility
 

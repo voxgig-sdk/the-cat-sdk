@@ -61,16 +61,16 @@ function search_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["THECAT_TEST_SEARCH_ENTID"] = {},
-    ["THECAT_TEST_LIVE"] = "FALSE",
-    ["THECAT_APIKEY"] = "NONE",
+    ["THE_CAT_TEST_SEARCH_ENTID"] = {},
+    ["THE_CAT_TEST_LIVE"] = "FALSE",
+    ["THE_CAT_APIKEY"] = "NONE",
   })
 
-  local live = env["THECAT_TEST_LIVE"] == "TRUE"
+  local live = env["THE_CAT_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
-      apikey = env["THECAT_APIKEY"],
+      apikey = env["THE_CAT_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

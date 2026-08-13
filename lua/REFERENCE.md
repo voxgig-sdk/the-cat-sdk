@@ -154,8 +154,8 @@ local search = client:Search(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `breed` | `table` | No |  |
-| `category` | `table` | No |  |
+| `breeds` | `table` | No |  |
+| `categories` | `table` | No |  |
 | `height` | `number` | No |  |
 | `id` | `string` | No |  |
 | `url` | `string` | No |  |
