@@ -28,7 +28,7 @@ class TheCatSDK
     utility = TheCatUtility.new
     @_utility = utility
 
-    config = TheCatConfig.make_config
+    config = TheCatConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

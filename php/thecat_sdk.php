@@ -40,7 +40,7 @@ class TheCatSDK
         $utility = new TheCatUtility();
         $this->_utility = $utility;
 
-        $config = TheCatConfig::make_config();
+        $config = TheCatConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

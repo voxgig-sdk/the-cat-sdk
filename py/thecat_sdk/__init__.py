@@ -23,8 +23,8 @@ class TheCatSDK:
         utility = TheCatUtility()
         self._utility = utility
 
-        from thecat_sdk.config import make_config
-        config = make_config()
+        from thecat_sdk.config import shared_config
+        config = shared_config()
 
         self._rootctx = utility.make_context({
             "client": self,
