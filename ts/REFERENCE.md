@@ -129,14 +129,14 @@ const breed = client.Breed()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `string` | No |  |
-| `id` | `string` | No |  |
-| `life_span` | `string` | No |  |
-| `name` | `string` | No |  |
-| `origin` | `string` | No |  |
-| `temperament` | `string` | No |  |
+| `description` | `string` | No | Description of the breed |
+| `id` | `string` | No | Unique identifier for the breed |
+| `life_span` | `string` | No | Average life span of the breed |
+| `name` | `string` | No | Name of the breed |
+| `origin` | `string` | No | Country or region of origin |
+| `temperament` | `string` | No | Temperament characteristics of the breed |
 | `weight` | `Record<string, any>` | No |  |
-| `wikipedia_url` | `string` | No |  |
+| `wikipedia_url` | `string` | No | Wikipedia URL for the breed |
 
 ### Operations
 
@@ -186,12 +186,12 @@ const search = client.Search()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `breeds` | `any[]` | No |  |
-| `categories` | `any[]` | No |  |
-| `height` | `number` | No |  |
-| `id` | `string` | No |  |
-| `url` | `string` | No |  |
-| `width` | `number` | No |  |
+| `breeds` | `any[]` | No | Array of breed information if available |
+| `categories` | `any[]` | No | Array of categories the image belongs to |
+| `height` | `number` | No | Height of the image in pixels |
+| `id` | `string` | No | Unique identifier for the image |
+| `url` | `string` | No | URL of the cat image |
+| `width` | `number` | No | Width of the image in pixels |
 
 ### Operations
 

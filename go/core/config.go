@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "TheCat",
+			"slug": "the-cat",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -37,26 +40,32 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "description",
+						"short": "Description of the breed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "id",
+						"short": "Unique identifier for the breed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "life_span",
+						"short": "Average life span of the breed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "name",
+						"short": "Name of the breed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "origin",
+						"short": "Country or region of origin",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "temperament",
+						"short": "Temperament characteristics of the breed",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -65,6 +74,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "wikipedia_url",
+						"short": "Wikipedia URL for the breed",
 						"type": "`$STRING`",
 					},
 				},
@@ -121,26 +131,32 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "breeds",
+						"short": "Array of breed information if available",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "categories",
+						"short": "Array of categories the image belongs to",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "height",
+						"short": "Height of the image in pixels",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "id",
+						"short": "Unique identifier for the image",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "url",
+						"short": "URL of the cat image",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "width",
+						"short": "Width of the image in pixels",
 						"type": "`$INTEGER`",
 					},
 				},

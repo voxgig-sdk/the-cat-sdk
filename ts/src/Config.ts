@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'TheCat',
+        slug: "the-cat",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -63,26 +74,32 @@ class Config {
       "fields": [
         {
           "name": "description",
+          "short": "Description of the breed",
           "type": "`$STRING`"
         },
         {
           "name": "id",
+          "short": "Unique identifier for the breed",
           "type": "`$STRING`"
         },
         {
           "name": "life_span",
+          "short": "Average life span of the breed",
           "type": "`$STRING`"
         },
         {
           "name": "name",
+          "short": "Name of the breed",
           "type": "`$STRING`"
         },
         {
           "name": "origin",
+          "short": "Country or region of origin",
           "type": "`$STRING`"
         },
         {
           "name": "temperament",
+          "short": "Temperament characteristics of the breed",
           "type": "`$STRING`"
         },
         {
@@ -91,6 +108,7 @@ class Config {
         },
         {
           "name": "wikipedia_url",
+          "short": "Wikipedia URL for the breed",
           "type": "`$STRING`"
         }
       ],
@@ -147,26 +165,32 @@ class Config {
       "fields": [
         {
           "name": "breeds",
+          "short": "Array of breed information if available",
           "type": "`$ARRAY`"
         },
         {
           "name": "categories",
+          "short": "Array of categories the image belongs to",
           "type": "`$ARRAY`"
         },
         {
           "name": "height",
+          "short": "Height of the image in pixels",
           "type": "`$INTEGER`"
         },
         {
           "name": "id",
+          "short": "Unique identifier for the image",
           "type": "`$STRING`"
         },
         {
           "name": "url",
+          "short": "URL of the cat image",
           "type": "`$STRING`"
         },
         {
           "name": "width",
+          "short": "Width of the image in pixels",
           "type": "`$INTEGER`"
         }
       ],

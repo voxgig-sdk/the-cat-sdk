@@ -249,14 +249,14 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `id` |  |
-| `life_span` |  |
-| `name` |  |
-| `origin` |  |
-| `temperament` |  |
+| `description` | Description of the breed |
+| `id` | Unique identifier for the breed |
+| `life_span` | Average life span of the breed |
+| `name` | Name of the breed |
+| `origin` | Country or region of origin |
+| `temperament` | Temperament characteristics of the breed |
 | `weight` |  |
-| `wikipedia_url` |  |
+| `wikipedia_url` | Wikipedia URL for the breed |
 
 Operations: List.
 
@@ -266,12 +266,12 @@ API path: `/breeds`
 
 | Field | Description |
 | --- | --- |
-| `breeds` |  |
-| `categories` |  |
-| `height` |  |
-| `id` |  |
-| `url` |  |
-| `width` |  |
+| `breeds` | Array of breed information if available |
+| `categories` | Array of categories the image belongs to |
+| `height` | Height of the image in pixels |
+| `id` | Unique identifier for the image |
+| `url` | URL of the cat image |
+| `width` | Width of the image in pixels |
 
 Operations: List.
 
@@ -296,14 +296,14 @@ Create an instance: `breed = client.Breed()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `str` |  |
-| `id` | `str` |  |
-| `life_span` | `str` |  |
-| `name` | `str` |  |
-| `origin` | `str` |  |
-| `temperament` | `str` |  |
+| `description` | `str` | Description of the breed |
+| `id` | `str` | Unique identifier for the breed |
+| `life_span` | `str` | Average life span of the breed |
+| `name` | `str` | Name of the breed |
+| `origin` | `str` | Country or region of origin |
+| `temperament` | `str` | Temperament characteristics of the breed |
 | `weight` | `dict` |  |
-| `wikipedia_url` | `str` |  |
+| `wikipedia_url` | `str` | Wikipedia URL for the breed |
 
 #### Example: List
 
@@ -326,12 +326,12 @@ Create an instance: `search = client.Search()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `breeds` | `list` |  |
-| `categories` | `list` |  |
-| `height` | `int` |  |
-| `id` | `str` |  |
-| `url` | `str` |  |
-| `width` | `int` |  |
+| `breeds` | `list` | Array of breed information if available |
+| `categories` | `list` | Array of categories the image belongs to |
+| `height` | `int` | Height of the image in pixels |
+| `id` | `str` | Unique identifier for the image |
+| `url` | `str` | URL of the cat image |
+| `width` | `int` | Width of the image in pixels |
 
 #### Example: List
 

@@ -98,14 +98,14 @@ breed = client.Breed
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `String` | No |  |
-| `id` | `String` | No |  |
-| `life_span` | `String` | No |  |
-| `name` | `String` | No |  |
-| `origin` | `String` | No |  |
-| `temperament` | `String` | No |  |
+| `description` | `String` | No | Description of the breed |
+| `id` | `String` | No | Unique identifier for the breed |
+| `life_span` | `String` | No | Average life span of the breed |
+| `name` | `String` | No | Name of the breed |
+| `origin` | `String` | No | Country or region of origin |
+| `temperament` | `String` | No | Temperament characteristics of the breed |
 | `weight` | `Hash` | No |  |
-| `wikipedia_url` | `String` | No |  |
+| `wikipedia_url` | `String` | No | Wikipedia URL for the breed |
 
 ### Operations
 
@@ -157,12 +157,12 @@ search = client.Search
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `breeds` | `Array` | No |  |
-| `categories` | `Array` | No |  |
-| `height` | `Integer` | No |  |
-| `id` | `String` | No |  |
-| `url` | `String` | No |  |
-| `width` | `Integer` | No |  |
+| `breeds` | `Array` | No | Array of breed information if available |
+| `categories` | `Array` | No | Array of categories the image belongs to |
+| `height` | `Integer` | No | Height of the image in pixels |
+| `id` | `String` | No | Unique identifier for the image |
+| `url` | `String` | No | URL of the cat image |
+| `width` | `Integer` | No | Width of the image in pixels |
 
 ### Operations
 

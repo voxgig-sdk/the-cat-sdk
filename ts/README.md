@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -294,14 +294,14 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `id` |  |
-| `life_span` |  |
-| `name` |  |
-| `origin` |  |
-| `temperament` |  |
+| `description` | Description of the breed |
+| `id` | Unique identifier for the breed |
+| `life_span` | Average life span of the breed |
+| `name` | Name of the breed |
+| `origin` | Country or region of origin |
+| `temperament` | Temperament characteristics of the breed |
 | `weight` |  |
-| `wikipedia_url` |  |
+| `wikipedia_url` | Wikipedia URL for the breed |
 
 Operations: list.
 
@@ -311,12 +311,12 @@ API path: `/breeds`
 
 | Field | Description |
 | --- | --- |
-| `breeds` |  |
-| `categories` |  |
-| `height` |  |
-| `id` |  |
-| `url` |  |
-| `width` |  |
+| `breeds` | Array of breed information if available |
+| `categories` | Array of categories the image belongs to |
+| `height` | Height of the image in pixels |
+| `id` | Unique identifier for the image |
+| `url` | URL of the cat image |
+| `width` | Width of the image in pixels |
 
 Operations: list.
 
@@ -341,14 +341,14 @@ Create an instance: `const breed = client.Breed()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `id` | `string` |  |
-| `life_span` | `string` |  |
-| `name` | `string` |  |
-| `origin` | `string` |  |
-| `temperament` | `string` |  |
+| `description` | `string` | Description of the breed |
+| `id` | `string` | Unique identifier for the breed |
+| `life_span` | `string` | Average life span of the breed |
+| `name` | `string` | Name of the breed |
+| `origin` | `string` | Country or region of origin |
+| `temperament` | `string` | Temperament characteristics of the breed |
 | `weight` | `Record<string, any>` |  |
-| `wikipedia_url` | `string` |  |
+| `wikipedia_url` | `string` | Wikipedia URL for the breed |
 
 #### Example: List
 
@@ -371,12 +371,12 @@ Create an instance: `const search = client.Search()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `breeds` | `any[]` |  |
-| `categories` | `any[]` |  |
-| `height` | `number` |  |
-| `id` | `string` |  |
-| `url` | `string` |  |
-| `width` | `number` |  |
+| `breeds` | `any[]` | Array of breed information if available |
+| `categories` | `any[]` | Array of categories the image belongs to |
+| `height` | `number` | Height of the image in pixels |
+| `id` | `string` | Unique identifier for the image |
+| `url` | `string` | URL of the cat image |
+| `width` | `number` | Width of the image in pixels |
 
 #### Example: List
 

@@ -103,14 +103,14 @@ fmt.Println(breed.GetName()) // "breed"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `string` | No |  |
-| `id` | `string` | No |  |
-| `life_span` | `string` | No |  |
-| `name` | `string` | No |  |
-| `origin` | `string` | No |  |
-| `temperament` | `string` | No |  |
+| `description` | `string` | No | Description of the breed |
+| `id` | `string` | No | Unique identifier for the breed |
+| `life_span` | `string` | No | Average life span of the breed |
+| `name` | `string` | No | Name of the breed |
+| `origin` | `string` | No | Country or region of origin |
+| `temperament` | `string` | No | Temperament characteristics of the breed |
 | `weight` | `map[string]any` | No |  |
-| `wikipedia_url` | `string` | No |  |
+| `wikipedia_url` | `string` | No | Wikipedia URL for the breed |
 
 ### Operations
 
@@ -161,12 +161,12 @@ fmt.Println(search.GetName()) // "search"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `breeds` | `[]any` | No |  |
-| `categories` | `[]any` | No |  |
-| `height` | `int` | No |  |
-| `id` | `string` | No |  |
-| `url` | `string` | No |  |
-| `width` | `int` | No |  |
+| `breeds` | `[]any` | No | Array of breed information if available |
+| `categories` | `[]any` | No | Array of categories the image belongs to |
+| `height` | `int` | No | Height of the image in pixels |
+| `id` | `string` | No | Unique identifier for the image |
+| `url` | `string` | No | URL of the cat image |
+| `width` | `int` | No | Width of the image in pixels |
 
 ### Operations
 

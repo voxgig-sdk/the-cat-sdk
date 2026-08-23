@@ -19,6 +19,9 @@ module TheCatConfig
     {
       "main" => {
         "name" => "TheCat",
+        "slug" => "the-cat",
+        "version" => "0.0.1",
+        "target" => "rb",
       },
       "feature" => {
         "test" => {
@@ -45,26 +48,32 @@ module TheCatConfig
           "fields" => [
             {
               "name" => "description",
+              "short" => "Description of the breed",
               "type" => "`$STRING`",
             },
             {
               "name" => "id",
+              "short" => "Unique identifier for the breed",
               "type" => "`$STRING`",
             },
             {
               "name" => "life_span",
+              "short" => "Average life span of the breed",
               "type" => "`$STRING`",
             },
             {
               "name" => "name",
+              "short" => "Name of the breed",
               "type" => "`$STRING`",
             },
             {
               "name" => "origin",
+              "short" => "Country or region of origin",
               "type" => "`$STRING`",
             },
             {
               "name" => "temperament",
+              "short" => "Temperament characteristics of the breed",
               "type" => "`$STRING`",
             },
             {
@@ -73,6 +82,7 @@ module TheCatConfig
             },
             {
               "name" => "wikipedia_url",
+              "short" => "Wikipedia URL for the breed",
               "type" => "`$STRING`",
             },
           ],
@@ -129,26 +139,32 @@ module TheCatConfig
           "fields" => [
             {
               "name" => "breeds",
+              "short" => "Array of breed information if available",
               "type" => "`$ARRAY`",
             },
             {
               "name" => "categories",
+              "short" => "Array of categories the image belongs to",
               "type" => "`$ARRAY`",
             },
             {
               "name" => "height",
+              "short" => "Height of the image in pixels",
               "type" => "`$INTEGER`",
             },
             {
               "name" => "id",
+              "short" => "Unique identifier for the image",
               "type" => "`$STRING`",
             },
             {
               "name" => "url",
+              "short" => "URL of the cat image",
               "type" => "`$STRING`",
             },
             {
               "name" => "width",
+              "short" => "Width of the image in pixels",
               "type" => "`$INTEGER`",
             },
           ],

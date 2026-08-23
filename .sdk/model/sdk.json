@@ -36,36 +36,42 @@
               "active": true,
               "name": "description",
               "req": false,
+              "short": "Description of the breed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "id",
               "req": false,
+              "short": "Unique identifier for the breed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "life_span",
               "req": false,
+              "short": "Average life span of the breed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "name",
               "req": false,
+              "short": "Name of the breed",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "origin",
               "req": false,
+              "short": "Country or region of origin",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "temperament",
               "req": false,
+              "short": "Temperament characteristics of the breed",
               "type": "`$STRING`"
             },
             {
@@ -78,6 +84,7 @@
               "active": true,
               "name": "wikipedia_url",
               "req": false,
+              "short": "Wikipedia URL for the breed",
               "type": "`$STRING`"
             }
           ],
@@ -149,36 +156,42 @@
               "active": true,
               "name": "breeds",
               "req": false,
+              "short": "Array of breed information if available",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "categories",
               "req": false,
+              "short": "Array of categories the image belongs to",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "height",
               "req": false,
+              "short": "Height of the image in pixels",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "id",
               "req": false,
+              "short": "Unique identifier for the image",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "url",
               "req": false,
+              "short": "URL of the cat image",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "width",
               "req": false,
+              "short": "Width of the image in pixels",
               "type": "`$INTEGER`"
             }
           ],

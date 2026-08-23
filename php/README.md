@@ -252,14 +252,14 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `id` |  |
-| `life_span` |  |
-| `name` |  |
-| `origin` |  |
-| `temperament` |  |
+| `description` | Description of the breed |
+| `id` | Unique identifier for the breed |
+| `life_span` | Average life span of the breed |
+| `name` | Name of the breed |
+| `origin` | Country or region of origin |
+| `temperament` | Temperament characteristics of the breed |
 | `weight` |  |
-| `wikipedia_url` |  |
+| `wikipedia_url` | Wikipedia URL for the breed |
 
 Operations: List.
 
@@ -269,12 +269,12 @@ API path: `/breeds`
 
 | Field | Description |
 | --- | --- |
-| `breeds` |  |
-| `categories` |  |
-| `height` |  |
-| `id` |  |
-| `url` |  |
-| `width` |  |
+| `breeds` | Array of breed information if available |
+| `categories` | Array of categories the image belongs to |
+| `height` | Height of the image in pixels |
+| `id` | Unique identifier for the image |
+| `url` | URL of the cat image |
+| `width` | Width of the image in pixels |
 
 Operations: List.
 
@@ -299,14 +299,14 @@ Create an instance: `$breed = $client->Breed();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `id` | `string` |  |
-| `life_span` | `string` |  |
-| `name` | `string` |  |
-| `origin` | `string` |  |
-| `temperament` | `string` |  |
+| `description` | `string` | Description of the breed |
+| `id` | `string` | Unique identifier for the breed |
+| `life_span` | `string` | Average life span of the breed |
+| `name` | `string` | Name of the breed |
+| `origin` | `string` | Country or region of origin |
+| `temperament` | `string` | Temperament characteristics of the breed |
 | `weight` | `array` |  |
-| `wikipedia_url` | `string` |  |
+| `wikipedia_url` | `string` | Wikipedia URL for the breed |
 
 #### Example: List
 
@@ -330,12 +330,12 @@ Create an instance: `$search = $client->Search();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `breeds` | `array` |  |
-| `categories` | `array` |  |
-| `height` | `int` |  |
-| `id` | `string` |  |
-| `url` | `string` |  |
-| `width` | `int` |  |
+| `breeds` | `array` | Array of breed information if available |
+| `categories` | `array` | Array of categories the image belongs to |
+| `height` | `int` | Height of the image in pixels |
+| `id` | `string` | Unique identifier for the image |
+| `url` | `string` | URL of the cat image |
+| `width` | `int` | Width of the image in pixels |
 
 #### Example: List
 

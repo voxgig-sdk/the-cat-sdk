@@ -8,31 +8,37 @@ main: kit: entity: breed: {
     {
       name: "description"
       req: false
+      short: "Description of the breed"
       type: "`$STRING`"
     }
     {
       name: "id"
       req: false
+      short: "Unique identifier for the breed"
       type: "`$STRING`"
     }
     {
       name: "life_span"
       req: false
+      short: "Average life span of the breed"
       type: "`$STRING`"
     }
     {
       name: "name"
       req: false
+      short: "Name of the breed"
       type: "`$STRING`"
     }
     {
       name: "origin"
       req: false
+      short: "Country or region of origin"
       type: "`$STRING`"
     }
     {
       name: "temperament"
       req: false
+      short: "Temperament characteristics of the breed"
       type: "`$STRING`"
     }
     {
@@ -43,6 +49,7 @@ main: kit: entity: breed: {
     {
       name: "wikipedia_url"
       req: false
+      short: "Wikipedia URL for the breed"
       type: "`$STRING`"
     }
   ]

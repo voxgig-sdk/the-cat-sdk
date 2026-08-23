@@ -8,31 +8,37 @@ main: kit: entity: search: {
     {
       name: "breeds"
       req: false
+      short: "Array of breed information if available"
       type: "`$ARRAY`"
     }
     {
       name: "categories"
       req: false
+      short: "Array of categories the image belongs to"
       type: "`$ARRAY`"
     }
     {
       name: "height"
       req: false
+      short: "Height of the image in pixels"
       type: "`$INTEGER`"
     }
     {
       name: "id"
       req: false
+      short: "Unique identifier for the image"
       type: "`$STRING`"
     }
     {
       name: "url"
       req: false
+      short: "URL of the cat image"
       type: "`$STRING`"
     }
     {
       name: "width"
       req: false
+      short: "Width of the image in pixels"
       type: "`$INTEGER`"
     }
   ]

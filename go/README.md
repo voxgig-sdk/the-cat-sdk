@@ -6,7 +6,7 @@ The Golang SDK for the TheCat API — an entity-oriented client using standard G
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Breed(nil)` — each with the same small set of operations (`List`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -266,14 +266,14 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"description"` |  |
-| `"id"` |  |
-| `"life_span"` |  |
-| `"name"` |  |
-| `"origin"` |  |
-| `"temperament"` |  |
+| `"description"` | Description of the breed |
+| `"id"` | Unique identifier for the breed |
+| `"life_span"` | Average life span of the breed |
+| `"name"` | Name of the breed |
+| `"origin"` | Country or region of origin |
+| `"temperament"` | Temperament characteristics of the breed |
 | `"weight"` |  |
-| `"wikipedia_url"` |  |
+| `"wikipedia_url"` | Wikipedia URL for the breed |
 
 Operations: List.
 
@@ -283,12 +283,12 @@ API path: `/breeds`
 
 | Field | Description |
 | --- | --- |
-| `"breeds"` |  |
-| `"categories"` |  |
-| `"height"` |  |
-| `"id"` |  |
-| `"url"` |  |
-| `"width"` |  |
+| `"breeds"` | Array of breed information if available |
+| `"categories"` | Array of categories the image belongs to |
+| `"height"` | Height of the image in pixels |
+| `"id"` | Unique identifier for the image |
+| `"url"` | URL of the cat image |
+| `"width"` | Width of the image in pixels |
 
 Operations: List.
 
@@ -313,14 +313,14 @@ Create an instance: `breed := client.Breed(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `id` | `string` |  |
-| `life_span` | `string` |  |
-| `name` | `string` |  |
-| `origin` | `string` |  |
-| `temperament` | `string` |  |
+| `description` | `string` | Description of the breed |
+| `id` | `string` | Unique identifier for the breed |
+| `life_span` | `string` | Average life span of the breed |
+| `name` | `string` | Name of the breed |
+| `origin` | `string` | Country or region of origin |
+| `temperament` | `string` | Temperament characteristics of the breed |
 | `weight` | `map[string]any` |  |
-| `wikipedia_url` | `string` |  |
+| `wikipedia_url` | `string` | Wikipedia URL for the breed |
 
 #### Example: List
 
@@ -347,12 +347,12 @@ Create an instance: `search := client.Search(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `breeds` | `[]any` |  |
-| `categories` | `[]any` |  |
-| `height` | `int` |  |
-| `id` | `string` |  |
-| `url` | `string` |  |
-| `width` | `int` |  |
+| `breeds` | `[]any` | Array of breed information if available |
+| `categories` | `[]any` | Array of categories the image belongs to |
+| `height` | `int` | Height of the image in pixels |
+| `id` | `string` | Unique identifier for the image |
+| `url` | `string` | URL of the cat image |
+| `width` | `int` | Width of the image in pixels |
 
 #### Example: List
 
