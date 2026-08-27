@@ -42,6 +42,7 @@ class TheCatConfig
           'options' => [
             'active' => false,
           ],
+          'transport' => 'base',
         ],
             ],
             "options" => [
