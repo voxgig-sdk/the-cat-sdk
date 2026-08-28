@@ -28,14 +28,8 @@ class Breed(TypedDict, total=False):
 
 
 class BreedListMatch(TypedDict, total=False):
-    description: str
-    id: str
-    life_span: str
-    name: str
-    origin: str
-    temperament: str
-    weight: dict
-    wikipedia_url: str
+    limit: int
+    page: int
 
 
 class Search(TypedDict, total=False):
@@ -48,9 +42,10 @@ class Search(TypedDict, total=False):
 
 
 class SearchListMatch(TypedDict, total=False):
-    breeds: list
-    categories: list
-    height: int
-    id: str
-    url: str
-    width: int
+    breed_id: str
+    category_id: str
+    limit: int
+    mime_type: str
+    order: str
+    page: int
+    size: str

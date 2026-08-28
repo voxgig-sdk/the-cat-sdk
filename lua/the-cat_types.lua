@@ -17,14 +17,8 @@
 ---@field wikipedia_url? string
 
 ---@class BreedListMatch
----@field description? string
----@field id? string
----@field life_span? string
----@field name? string
----@field origin? string
----@field temperament? string
----@field weight? table
----@field wikipedia_url? string
+---@field limit? number
+---@field page? number
 
 ---@class Search
 ---@field breeds? table
@@ -35,12 +29,13 @@
 ---@field width? number
 
 ---@class SearchListMatch
----@field breeds? table
----@field categories? table
----@field height? number
----@field id? string
----@field url? string
----@field width? number
+---@field breed_id? string
+---@field category_id? string
+---@field limit? number
+---@field mime_type? string
+---@field order? string
+---@field page? number
+---@field size? string
 
 local M = {}
 

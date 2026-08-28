@@ -26,14 +26,8 @@ type Breed struct {
 
 // BreedListMatch is the typed request payload for Breed.ListTyped.
 type BreedListMatch struct {
-	Description *string `json:"description,omitempty"`
-	Id *string `json:"id,omitempty"`
-	LifeSpan *string `json:"life_span,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Origin *string `json:"origin,omitempty"`
-	Temperament *string `json:"temperament,omitempty"`
-	Weight *map[string]any `json:"weight,omitempty"`
-	WikipediaUrl *string `json:"wikipedia_url,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	Page *int `json:"page,omitempty"`
 }
 
 // Search is the typed data model for the search entity.
@@ -48,12 +42,13 @@ type Search struct {
 
 // SearchListMatch is the typed request payload for Search.ListTyped.
 type SearchListMatch struct {
-	Breeds *[]any `json:"breeds,omitempty"`
-	Categories *[]any `json:"categories,omitempty"`
-	Height *int `json:"height,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Url *string `json:"url,omitempty"`
-	Width *int `json:"width,omitempty"`
+	BreedId *string `json:"breed_id,omitempty"`
+	CategoryId *string `json:"category_id,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	MimeType *string `json:"mime_type,omitempty"`
+	Order *string `json:"order,omitempty"`
+	Page *int `json:"page,omitempty"`
+	Size *string `json:"size,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

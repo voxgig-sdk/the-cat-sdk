@@ -17,14 +17,8 @@ export interface Breed {
 }
 
 export interface BreedListMatch {
-  description?: string
-  id?: string
-  life_span?: string
-  name?: string
-  origin?: string
-  temperament?: string
-  weight?: Record<string, any>
-  wikipedia_url?: string
+  limit?: number
+  page?: number
 }
 
 export interface Search {
@@ -37,11 +31,12 @@ export interface Search {
 }
 
 export interface SearchListMatch {
-  breeds?: any[]
-  categories?: any[]
-  height?: number
-  id?: string
-  url?: string
-  width?: number
+  breed_id?: string
+  category_id?: string
+  limit?: number
+  mime_type?: string
+  order?: string
+  page?: number
+  size?: string
 }
 

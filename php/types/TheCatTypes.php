@@ -28,14 +28,8 @@ class Breed
 /** Request payload for Breed#list. */
 class BreedListMatch
 {
-    public ?string $description = null;
-    public ?string $id = null;
-    public ?string $life_span = null;
-    public ?string $name = null;
-    public ?string $origin = null;
-    public ?string $temperament = null;
-    public ?array $weight = null;
-    public ?string $wikipedia_url = null;
+    public ?int $limit = null;
+    public ?int $page = null;
 }
 
 /** Search entity data model. */
@@ -52,11 +46,12 @@ class Search
 /** Request payload for Search#list. */
 class SearchListMatch
 {
-    public ?array $breeds = null;
-    public ?array $categories = null;
-    public ?int $height = null;
-    public ?string $id = null;
-    public ?string $url = null;
-    public ?int $width = null;
+    public ?string $breed_id = null;
+    public ?string $category_id = null;
+    public ?int $limit = null;
+    public ?string $mime_type = null;
+    public ?string $order = null;
+    public ?int $page = null;
+    public ?string $size = null;
 }
 
