@@ -47,6 +47,7 @@ main: kit: entity: breed: {
       type: "`$OBJECT`"
     }
     {
+      format: "uri"
       name: "wikipedia_url"
       req: false
       short: "Wikipedia URL for the breed"
@@ -87,8 +88,10 @@ main: kit: entity: breed: {
           }
           method: "GET"
           orig: "/breeds"
-          parts: [
-            "breeds"
+          segments: [
+            {
+              lit: "breeds"
+            }
           ]
           select: {
             exist: [

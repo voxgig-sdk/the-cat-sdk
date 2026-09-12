@@ -98,7 +98,7 @@ func TestBreedEntity(t *testing.T) {
 		client := setup.client
 
 		// Bootstrap entity data from existing test data (no create step in flow).
-		breedRef01DataRaw := vs.Items(core.ToMapAny(vs.GetPath("existing.breed", setup.data)))
+		breedRef01DataRaw := vs.Items(core.ToMapAny(vs.GetPath(setup.data, "existing.breed")))
 		var breedRef01Data map[string]any
 		if len(breedRef01DataRaw) > 0 {
 			breedRef01Data = core.ToMapAny(breedRef01DataRaw[0][1])
@@ -147,7 +147,7 @@ func breedBasicSetup(extra map[string]any) *entityTestSetup {
 	client := sdk.TestSDK(options, extra)
 
 	// Generate idmap via transform, matching TS pattern.
-	idmap := vs.Transform(
+	idmap, _ := vs.Transform(
 		[]any{"breed01", "breed02", "breed03"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
@@ -167,7 +167,7 @@ func breedBasicSetup(extra map[string]any) *entityTestSetup {
 		"THE_CAT_TEST_BREED_ENTID": idmap,
 		"THE_CAT_TEST_LIVE":      "FALSE",
 		"THE_CAT_TEST_EXPLAIN":   "FALSE",
-		"THE_CAT_APIKEY":         "NONE",
+		"THE_CAT_APIKEY":         "",
 	})
 
 	idmapResolved := core.ToMapAny(env["THE_CAT_TEST_BREED_ENTID"])
@@ -176,11 +176,23 @@ func breedBasicSetup(extra map[string]any) *entityTestSetup {
 	}
 
 	if env["THE_CAT_TEST_LIVE"] == "TRUE" {
+		// An empty map, not a nil one: Merge returns nil when its last entry
+		// is nil, and BasicSetup is normally called with no extras - so a
+		// bare nil silently discarded the apikey and server values below.
+		extraOpts := extra
+		if extraOpts == nil {
+			extraOpts = map[string]any{}
+		}
+
 		mergedOpts := vs.Merge([]any{
+			// liveClientOptions() FIRST, so the generated fields below win:
+			// sdk-test-control.json's test.client.options adds to the live
+			// client, it does not redirect it.
+			liveClientOptions(),
 			map[string]any{
 				"apikey": env["THE_CAT_APIKEY"],
 			},
-			extra,
+			extraOpts,
 		})
 		client = sdk.NewTheCatSDK(core.ToMapAny(mergedOpts))
 	}

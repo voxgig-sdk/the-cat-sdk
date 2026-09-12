@@ -10,6 +10,17 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
+// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
+// the model's active plugin groups. A feature that takes a `plugins` option
+// (secrets over sekreto) reads its own entry; a feature with no plugins has
+// none. Named imports above make each definition statically reachable, so
+// an SDK carries exactly the plugin modules its model selects — the same
+// leanness the old side-effect registry imports bought, without a registry.
+const FEATURE_PLUGINS: Record<string, any[]> = {
+  
+}
+
+
 class Config {
 
   makeFeature(this: any, fn: string) {
@@ -108,11 +119,16 @@ class Config {
           "type": "`$OBJECT`"
         },
         {
+          "format": "uri",
           "name": "wikipedia_url",
           "short": "Wikipedia URL for the breed",
           "type": "`$STRING`"
         }
       ],
+      "id": {
+        "field": "id",
+        "name": "id"
+      },
       "name": "breed",
       "op": {
         "list": {
@@ -141,8 +157,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/breeds",
-              "parts": [
-                "breeds"
+              "segments": [
+                {
+                  "lit": "breeds"
+                }
               ],
               "select": {
                 "exist": [
@@ -153,7 +171,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "breeds"
+              ]
             }
           ]
         }
@@ -185,6 +206,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "uri",
           "name": "url",
           "short": "URL of the cat image",
           "type": "`$STRING`"
@@ -195,6 +217,10 @@ class Config {
           "type": "`$INTEGER`"
         }
       ],
+      "id": {
+        "field": "id",
+        "name": "id"
+      },
       "name": "search",
       "op": {
         "list": {
@@ -256,9 +282,13 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/images/search",
-              "parts": [
-                "images",
-                "search"
+              "segments": [
+                {
+                  "lit": "images"
+                },
+                {
+                  "lit": "search"
+                }
               ],
               "select": {
                 "exist": [
@@ -274,7 +304,11 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "images",
+                "search"
+              ]
             }
           ]
         }
@@ -290,6 +324,7 @@ class Config {
 const config = new Config()
 
 export {
-  config
+  config,
+  FEATURE_PLUGINS,
 }
 

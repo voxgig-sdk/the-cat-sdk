@@ -63,7 +63,7 @@ function search_direct_setup(mockres)
   local env = runner.env_override({
     ["THE_CAT_TEST_SEARCH_ENTID"] = {},
     ["THE_CAT_TEST_LIVE"] = "FALSE",
-    ["THE_CAT_APIKEY"] = "NONE",
+    ["THE_CAT_APIKEY"] = "",
   })
 
   local live = env["THE_CAT_TEST_LIVE"] == "TRUE"
@@ -72,6 +72,13 @@ function search_direct_setup(mockres)
     local merged_opts = {
       apikey = env["THE_CAT_APIKEY"],
     }
+    -- sdk-test-control.json's test.client.options goes UNDER the generated
+    -- fields: it adds to the live client, it does not redirect it.
+    for _k, _v in pairs(runner.live_client_options()) do
+      if merged_opts[_k] == nil then
+        merged_opts[_k] = _v
+      end
+    end
     local client = sdk.new(merged_opts)
     return {
       client = client,

@@ -62,15 +62,17 @@ def search_direct_setup(mockres)
   env = Runner.env_override({
     "THE_CAT_TEST_SEARCH_ENTID" => {},
     "THE_CAT_TEST_LIVE" => "FALSE",
-    "THE_CAT_APIKEY" => "NONE",
+    "THE_CAT_APIKEY" => "",
   })
 
   live = env["THE_CAT_TEST_LIVE"] == "TRUE"
 
   if live
-    merged_opts = {
+    # Merged so the generated fields win: sdk-test-control.json's
+    # test.client.options adds to the live client, it does not redirect it.
+    merged_opts = Runner.live_client_options.merge({
       "apikey" => env["THE_CAT_APIKEY"],
-    }
+    })
     client = TheCatSDK.new(merged_opts)
     return {
       client: client,

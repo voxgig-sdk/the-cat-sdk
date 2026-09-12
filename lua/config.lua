@@ -70,10 +70,15 @@ local function make_config()
             ["type"] = "`$OBJECT`",
           },
           {
+            ["format"] = "uri",
             ["name"] = "wikipedia_url",
             ["short"] = "Wikipedia URL for the breed",
             ["type"] = "`$STRING`",
           },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
         },
         ["name"] = "breed",
         ["op"] = {
@@ -103,8 +108,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/breeds",
-                ["parts"] = {
-                  "breeds",
+                ["segments"] = {
+                  {
+                    ["lit"] = "breeds",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -115,6 +122,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "breeds",
                 },
               },
             },
@@ -147,6 +157,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "uri",
             ["name"] = "url",
             ["short"] = "URL of the cat image",
             ["type"] = "`$STRING`",
@@ -156,6 +167,10 @@ local function make_config()
             ["short"] = "Width of the image in pixels",
             ["type"] = "`$INTEGER`",
           },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
         },
         ["name"] = "search",
         ["op"] = {
@@ -218,9 +233,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/images/search",
-                ["parts"] = {
-                  "images",
-                  "search",
+                ["segments"] = {
+                  {
+                    ["lit"] = "images",
+                  },
+                  {
+                    ["lit"] = "search",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -236,6 +255,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "images",
+                  "search",
                 },
               },
             },

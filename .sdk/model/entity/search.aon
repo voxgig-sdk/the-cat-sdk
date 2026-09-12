@@ -30,6 +30,7 @@ main: kit: entity: search: {
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "url"
       req: false
       short: "URL of the cat image"
@@ -114,9 +115,13 @@ main: kit: entity: search: {
           }
           method: "GET"
           orig: "/images/search"
-          parts: [
-            "images"
-            "search"
+          segments: [
+            {
+              lit: "images"
+            }
+            {
+              lit: "search"
+            }
           ]
           select: {
             exist: [

@@ -82,11 +82,16 @@ module TheCatConfig
               "type" => "`$OBJECT`",
             },
             {
+              "format" => "uri",
               "name" => "wikipedia_url",
               "short" => "Wikipedia URL for the breed",
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "breed",
           "op" => {
             "list" => {
@@ -115,8 +120,10 @@ module TheCatConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/breeds",
-                  "parts" => [
-                    "breeds",
+                  "segments" => [
+                    {
+                      "lit" => "breeds",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -128,6 +135,9 @@ module TheCatConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "breeds",
+                  ],
                 },
               ],
             },
@@ -159,6 +169,7 @@ module TheCatConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "uri",
               "name" => "url",
               "short" => "URL of the cat image",
               "type" => "`$STRING`",
@@ -169,6 +180,10 @@ module TheCatConfig
               "type" => "`$INTEGER`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "search",
           "op" => {
             "list" => {
@@ -230,9 +245,13 @@ module TheCatConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/images/search",
-                  "parts" => [
-                    "images",
-                    "search",
+                  "segments" => [
+                    {
+                      "lit" => "images",
+                    },
+                    {
+                      "lit" => "search",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -249,6 +268,10 @@ module TheCatConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "images",
+                    "search",
+                  ],
                 },
               ],
             },
