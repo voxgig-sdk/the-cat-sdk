@@ -105,7 +105,7 @@ local results, err = client:Breed():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/the-cat` | publish pending — [install from git tag](https://github.com/voxgig-sdk/the-cat-sdk/releases) |
+| TypeScript | `@voxgig-sdk/the-cat-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/the-cat-sdk/releases) |
 | Python | `voxgig-sdk-the-cat` | publish pending — [install from git tag](https://github.com/voxgig-sdk/the-cat-sdk/releases) |
 | PHP | `voxgig-sdk/the-cat` | publish pending — [install from git tag](https://github.com/voxgig-sdk/the-cat-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/the-cat-sdk/go` | `go get github.com/voxgig-sdk/the-cat-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Breed():list()
 ### TypeScript
 
 ```ts
-import { TheCatSDK } from '@voxgig-sdk/the-cat'
+import { TheCatSDK } from '@voxgig-sdk/the-cat-sdk'
 
 const client = new TheCatSDK({
   apikey: process.env.THE_CAT_APIKEY,

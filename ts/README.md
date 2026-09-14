@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { TheCatSDK } from '@voxgig-sdk/the-cat'
+import { TheCatSDK } from '@voxgig-sdk/the-cat-sdk'
 
 const client = new TheCatSDK({
   apikey: process.env.THE_CAT_APIKEY,
@@ -467,7 +467,7 @@ the-cat/
 Import the SDK from the package root:
 
 ```ts
-import { TheCatSDK } from '@voxgig-sdk/the-cat'
+import { TheCatSDK } from '@voxgig-sdk/the-cat-sdk'
 ```
 
 ### Entity state
